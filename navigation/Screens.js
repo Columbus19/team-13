@@ -16,6 +16,7 @@ import Profile from "../screens/Profile";
 import Register from "../screens/Register";
 import Elements from "../screens/Elements";
 import Articles from "../screens/Articles";
+import ResumePage from "../screens/ResumePage";
 import ProgressBar from "../screens/ProgressBar";
 // drawer
 import Menu from "./Menu";
@@ -114,7 +115,7 @@ const ProfileStack = createStackNavigator(
         ),
         headerTransparent: true
       })
-    }
+    }  
   },
   {
     cardStyle: { backgroundColor: "#FFFFFF" },
@@ -147,6 +148,21 @@ const HomeStack = createStackNavigator(
     transitionConfig
   }
 );
+
+const ResumePageStack = createStackNavigator({
+  Articles: {
+    screen: ResumePage,
+    navigationOptions: ({ navigation }) => ({
+      header: <Header title="Application" navigation={navigation} />
+    })
+  }
+},{
+  cardStyle: {
+    backgroundColor: "#F8F9FE"
+  },
+  transitionConfig
+});
+
 // divideru se baga ca si cum ar fi un ecrna dar nu-i nimic duh
 const AppStack = createDrawerNavigator(
   {
@@ -199,6 +215,14 @@ const AppStack = createDrawerNavigator(
       navigationOptions: navOpt => ({
         drawerLabel: ({ focused }) => (
           <DrawerItem focused={focused} screen="Articles" title="Articles" />
+        )
+      })
+    },
+    ResumePage: {
+      screen: ResumePageStack,
+      navigationOptions: navOpt => ({
+        drawerLabel: ({ focused }) => (
+          <DrawerItem focused={focused} screen="Application" title="Application" />
         )
       })
     }
