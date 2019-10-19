@@ -2,7 +2,7 @@ class ProgressEnums {
     constructor () {
         this.application = "ResumePage"; 
         this.training = "Training"; 
-        this.interview = "Onboarding"; 
+        this.interview = "MockInterview"; 
         this.final = "Profile"; 
     }
 }
