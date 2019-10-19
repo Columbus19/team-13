@@ -6,7 +6,7 @@ import { Block, Button, Text, theme } from "galio-framework";
 import { CardTraining } from "../components";
 import { articles, argonTheme} from "../constants/"
 
-const { width } = Dimensions.get("screen");
+const { height, width } = Dimensions.get("screen");
 
 const cardWidth = width - theme.SIZES.BASE * 2;
 
@@ -34,27 +34,27 @@ class TrainingHome extends React.Component {
           <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
             <Button
               style={styles.button}
-              color={argonTheme.COLORS.SECONDARY}
+              color={argonTheme.COLORS.PRIMARY}
               onPress={() => navigation.navigate("TrainingVideo")}
-              textStyle={{ color: argonTheme.COLORS.BLACK }}
+              textStyle={styles.buttonText}
               >
-              Test Button
+              About INROADS
             </Button>
             <Button
               style={styles.button}
-              color={argonTheme.COLORS.SECONDARY}
+              color={argonTheme.COLORS.PRIMARY}
               onPress={() => navigation.navigate("TrainingVideo")}
-              textStyle={{ color: argonTheme.COLORS.BLACK }}
+              textStyle={styles.buttonText}
               >
-              Test Button
+              What to expect in an internship...
             </Button>
             <Button
               style={styles.button}
-              color={argonTheme.COLORS.SECONDARY}
+              color={argonTheme.COLORS.PRIMARY}
               onPress={() => navigation.navigate("TrainingVideo")}
-              textStyle={{ color: argonTheme.COLORS.BLACK }}
+              textStyle={styles.buttonText}
               >
-              Test Button
+              Interviewing skills
             </Button>
           </Block>
         </Block>
@@ -64,6 +64,16 @@ class TrainingHome extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  button: {
+    marginBottom: 20,
+    position: 'relative',
+    height: height / 5
+  },
+  buttonText: {
+    color: argonTheme.COLORS.BLACK,
+    fontWeight: "bold",
+    fontSize: 16
+  },
   title: {
     paddingBottom: theme.SIZES.BASE,
     paddingHorizontal: theme.SIZES.BASE * 2,
