@@ -16,6 +16,8 @@ import Profile from "../screens/Profile";
 import Register from "../screens/Register";
 import Elements from "../screens/Elements";
 import Articles from "../screens/Articles";
+import TrainingHome from "../screens/TrainingHome";
+import TrainingVideo from "../screens/TrainingVideo";
 import ResumePage from "../screens/ResumePage";
 import ProgressBar from "../screens/ProgressBar";
 // drawer
@@ -149,6 +151,27 @@ const HomeStack = createStackNavigator(
   }
 );
 
+const TrainingStack = createStackNavigator({
+  TrainingHome: {
+    screen: TrainingHome,
+    navigationOptions: ({ navigation }) => ({
+      header: <Header title="Training" navigation={navigation} />
+    })
+  },
+  TrainingVideo: {
+    screen: TrainingVideo,
+    navigationOptions: ({ navigation }) => ({
+      header: <Header title="Training" navigation={navigation} />
+    })
+  }
+},{
+  cardStyle: {
+    backgroundColor: "#F8F9FE"
+  },
+  transitionConfig
+});
+      
+
 const ResumePageStack = createStackNavigator({
   Articles: {
     screen: ResumePage,
@@ -229,6 +252,14 @@ const AppStack = createDrawerNavigator(
       navigationOptions: navOpt => ({
         drawerLabel: ({ focused }) => (
           <DrawerItem focused={focused} screen="Articles" title="Articles" />
+        )
+      })
+    },
+    Training: {
+      screen: TrainingStack,
+      navigationOptions: navOpt => ({
+        drawerLabel: ({ focused }) => (
+          <DrawerItem focused={focused} screen="Training" title="Training" />
         )
       })
     },
