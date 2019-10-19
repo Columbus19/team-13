@@ -278,7 +278,7 @@ class ResumePage extends React.Component {
             style={{ marginBottom: theme.SIZES.BASE / 2 , marginLeft: 15}}
             color={argonTheme.COLORS.DEFAULT}
           >
-            End date (Enter Present if current project/research)
+            End date (Enter Present if current position)
         </Text>
         <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
           <Input multiline="true" scroll="true" right placeholder="ex. November 2014" iconContent={<Block />} />
@@ -351,7 +351,7 @@ class ResumePage extends React.Component {
             style={{ marginBottom: theme.SIZES.BASE / 2 , marginLeft: 15}}
             color={argonTheme.COLORS.DEFAULT}
           >
-            End date (Enter Present if current project/research)
+            End date (Enter Present if current position)
         </Text>
         <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
           <Input multiline="true" scroll="true" right placeholder="ex. November 2014" iconContent={<Block />} />
@@ -421,7 +421,7 @@ class ResumePage extends React.Component {
             style={{ marginBottom: theme.SIZES.BASE / 2 , marginLeft: 15}}
             color={argonTheme.COLORS.DEFAULT}
           >
-            End date (Enter Present if current project/research)
+            End date (Enter Present if current position)
         </Text>
         <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
           <Input multiline="true" scroll="true" right placeholder="ex. November 2014" iconContent={<Block />} />
@@ -483,7 +483,7 @@ class ResumePage extends React.Component {
             style={{ marginBottom: theme.SIZES.BASE / 2 , marginLeft: 15}}
             color={argonTheme.COLORS.DEFAULT}
           >
-            End date (Enter Present if current project/research)
+            End date (Enter Present if current position)
         </Text>
         <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
           <Input multiline="true" scroll="true" right placeholder="ex. November 2014" iconContent={<Block />} />
@@ -499,6 +499,139 @@ class ResumePage extends React.Component {
         <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
           <Input multiline="true" scroll="true" right placeholder="Enter description here" iconContent={<Block />} />
         </Block>
+
+        {/*Volunteer Inputs*/}
+        <Text
+          h3
+          style={{ marginBottom: theme.SIZES.BASE / 2, textAlign: "center", textDecorationLine: "underline", paddingTop: 10 }}
+          color={argonTheme.COLORS.DEFAULT}>
+          Volunteer Experience
+        </Text>
+
+        <Text
+          h4
+          style={{ marginBottom: theme.SIZES.BASE / 2, textAlign: "left", fontWeight: "bold" }}
+          color={argonTheme.COLORS.DEFAULT}>
+          Volunteer Experience(1)
+        </Text>
+
+        <Text
+          h5
+          style={{ marginBottom: theme.SIZES.BASE / 2, marginLeft: 15 }}
+          color={argonTheme.COLORS.DEFAULT}
+        >
+          Volunteer group/activity
+        </Text>
+        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
+          <Input multiline="true" scroll="true" right placeholder="ex. The United Way" iconContent={<Block />} />
+        </Block>
+
+        <Text
+          h5
+          style={{ marginBottom: theme.SIZES.BASE / 2, marginLeft: 15 }}
+          color={argonTheme.COLORS.DEFAULT}
+        >
+          Role/Job Title
+        </Text>
+        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
+          <Input multiline="true" scroll="true" right placeholder="ex. Team Member" iconContent={<Block />} />
+        </Block>
+
+        <Text
+          h5
+          style={{ marginBottom: theme.SIZES.BASE / 2, marginLeft: 15 }}
+          color={argonTheme.COLORS.DEFAULT}
+        >
+          Start Date
+        </Text>
+        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
+          <Input multiline="true" scroll="true" right placeholder="ex. October 2013" iconContent={<Block />} />
+        </Block>
+
+        <Text
+          h5
+          style={{ marginBottom: theme.SIZES.BASE / 2, marginLeft: 15 }}
+          color={argonTheme.COLORS.DEFAULT}
+        >
+          End date (Enter Present if currently position)
+        </Text>
+        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
+          <Input multiline="true" scroll="true" right placeholder="ex. November 2014" iconContent={<Block />} />
+        </Block>
+
+        <Text
+          h5
+          style={{ marginBottom: theme.SIZES.BASE / 2, marginLeft: 15 }}
+          color={argonTheme.COLORS.DEFAULT}
+        >
+          Description/Duties (Can be multiple sentences)
+        </Text>
+        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
+          <Input multiline="true" scroll="true" right placeholder="Enter description here" iconContent={<Block />} />
+        </Block>
+
+        <Text
+          h4
+          style={{ marginBottom: theme.SIZES.BASE / 2, textAlign: "left", fontWeight: "bold" }}
+          color={argonTheme.COLORS.DEFAULT}>
+          Volunteer Experience(2)
+        </Text>
+
+        <Text
+          h5
+          style={{ marginBottom: theme.SIZES.BASE / 2, marginLeft: 15 }}
+          color={argonTheme.COLORS.DEFAULT}
+        >
+          Company/Place of work
+        </Text>
+        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
+          <Input multiline="true" scroll="true" right placeholder="ex. The United Way" iconContent={<Block />} />
+        </Block>
+
+        <Text
+          h5
+          style={{ marginBottom: theme.SIZES.BASE / 2, marginLeft: 15 }}
+          color={argonTheme.COLORS.DEFAULT}
+        >
+          Role/Job Title
+        </Text>
+        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
+          <Input multiline="true" scroll="true" right placeholder="ex. Team Member" iconContent={<Block />} />
+        </Block>
+
+        <Text
+          h5
+          style={{ marginBottom: theme.SIZES.BASE / 2, marginLeft: 15 }}
+          color={argonTheme.COLORS.DEFAULT}
+        >
+          Start Date
+        </Text>
+        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
+          <Input multiline="true" scroll="true" right placeholder="ex. October 2013" iconContent={<Block />} />
+        </Block>
+
+        <Text
+          h5
+          style={{ marginBottom: theme.SIZES.BASE / 2, marginLeft: 15 }}
+          color={argonTheme.COLORS.DEFAULT}
+        >
+          End date (Enter Present if current position)
+        </Text>
+        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
+          <Input multiline="true" scroll="true" right placeholder="ex. November 2014" iconContent={<Block />} />
+        </Block>
+
+        <Text
+          h5
+          style={{ marginBottom: theme.SIZES.BASE / 2, marginLeft: 15 }}
+          color={argonTheme.COLORS.DEFAULT}
+        >
+          Description/Duties (Can be multiple sentences)
+        </Text>
+        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
+          <Input multiline="true" scroll="true" right placeholder="Enter description here" iconContent={<Block />} />
+        </Block>
+        
       </ScrollView>
     );
   }
