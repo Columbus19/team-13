@@ -1,10 +1,11 @@
-import React from "react";
+import React, { setGlobal, useGlobal  } from "reactn";
 import { ScrollView, StyleSheet, Dimensions, TextInput } from "react-native";
 // Galio components
 import { Block, Text, Button as GaButton, theme } from "galio-framework";
 // Argon themed components
 import { argonTheme, tabs } from "../constants";
 import { Button, Select, Icon, Input, Header, Switch } from "../components";
+import ProgressEnums from "../enums/progressEnums";
 
 const { width } = Dimensions.get("screen");
 
@@ -16,6 +17,14 @@ class MockInterview extends React.Component {
             test: 0
             // test1: 0
         };
+    }
+
+    onHandleClickFinish = () => {
+      setGlobal({
+        userStage: new ProgressEnums().final,
+      });
+      const { navigation } = this.props;
+      navigation.navigate("ProgressBar");
     }
 
     onHandleChangeTest = () => {
@@ -83,6 +92,7 @@ class MockInterview extends React.Component {
             6. How would you handle a situation where ...
           </Text>
           <Button onPress={this.onHandleChangeTest}>Record</Button>
+          <Button color="success" style={{marginTop: 90, height: 90}} onPress={this.onHandleClickFinish}>Finish Application</Button>
           </Block>
       </ScrollView>
     );
