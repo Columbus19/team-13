@@ -798,10 +798,9 @@ class ResumePage extends React.Component {
 
 
 
-        <Block style={{marginTop: 20, marginBottom: 60}}>
+        <Block style={{marginTop: 40, marginBottom: 40}}>
         <Text
             h5
-            style={{marginTop: 40}}
             style={{ marginBottom: theme.SIZES.BASE / 2 , marginLeft: 15}}
             color={argonTheme.COLORS.DEFAULT}
           >
