@@ -62,9 +62,6 @@ class ProgressBar extends React.Component {
         <Text bold size={16} style={styles.title}>
           Progress
         </Text>
-        <Text bold size={16} style={styles.title}>
-          {global.userState.stage}
-        </Text>
         <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
           {this.renderStageButton("Application", this.progressEnums.application)}
           {/* SPACER LINE */}
@@ -79,15 +76,7 @@ class ProgressBar extends React.Component {
             </Button>
           </Block>
           {/* SPACER LINE END*/}
-          <Block center>
-            <Button
-              color={trainingColor}
-              textStyle={{ color: "black", fontSize: 12, fontWeight: "700" }}
-              style={styles.button}
-            >
-              Training
-            </Button>
-          </Block>
+          {this.renderStageButton("Training", this.progressEnums.training)}
           {/* SPACER LINE */}
           <Block center>
             <Button
@@ -100,15 +89,7 @@ class ProgressBar extends React.Component {
             </Button>
           </Block>
           {/* SPACER LINE END*/}
-          <Block center>
-            <Button
-              color={interviewColor}
-              textStyle={{ color: "black", fontSize: 12, fontWeight: "700" }}
-              style={styles.button}
-            >
-              Mock Interview
-            </Button>
-          </Block>
+          {this.renderStageButton("Mock Interview", this.progressEnums.interview)}
           {/* SPACER LINE */}
           <Block center>
             <Button
@@ -121,15 +102,7 @@ class ProgressBar extends React.Component {
             </Button>
           </Block>
           {/* SPACER LINE END*/}
-          <Block center>
-            <Button
-              color={finalColor}
-              textStyle={{ color: "black", fontSize: 12, fontWeight: "700" }}
-              style={styles.button}
-            >
-              Complete
-            </Button>
-          </Block>
+          {this.renderStageButton("Finish Application", this.progressEnums.final)}
         </Block>
       </Block>
     );

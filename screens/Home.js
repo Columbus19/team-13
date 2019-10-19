@@ -16,7 +16,7 @@ class Home extends React.Component {
         contentContainerStyle={styles.articles}>
         <Block flex>
           <Block center>
-            <Button color="default" style={styles.button} onPress={() => navigation.navigate("TestProgressBar")}>
+            <Button color="default" style={styles.button} onPress={() => navigation.navigate("ProgressBar")}>
               DEFAULT
             </Button>
           </Block>

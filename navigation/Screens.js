@@ -76,7 +76,7 @@ const ElementsStack = createStackNavigator({
   transitionConfig
 });
 
-const TestProgressBarStack = createStackNavigator({
+const ProgressBarStack = createStackNavigator({
   Elements: {
     screen: ProgressBar,
     navigationOptions: ({ navigation }) => ({
@@ -188,8 +188,8 @@ const AppStack = createDrawerNavigator(
         )
       })
     },
-    TestProgressBar: {
-      screen: TestProgressBarStack,
+    ProgressBar: {
+      screen: ProgressBarStack,
       navigationOptions: navOpt => ({
         drawerLabel: () => {}
       })
