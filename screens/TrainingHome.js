@@ -14,10 +14,8 @@ class TrainingHome extends React.Component {
   render(){
     return(
         <Block flex center>
-            <ScrollView>
-              <Text bold size={16} style={styles.title}>
-                Training
-              </Text>
+            <ScrollView
+            showsVerticalScrollIndicator={false}>
                 {this.renderCards()}
 
             </ScrollView>
@@ -28,36 +26,15 @@ class TrainingHome extends React.Component {
   renderCards = () => {
     return (
       <Block flex style={styles.group}>
+        <Text bold size={16} style={styles.title}>
+          Training
+        </Text>
         <Block flex>
           <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
             <Card item={articles[0]} horizontal />
-            <Block flex row>
-              <Card
-                item={articles[1]}
-                style={{ marginRight: theme.SIZES.BASE }}
-              />
-              <Card item={articles[2]} />
-            </Block>
+            <Card item={articles[0]} horizontal />
+            <Card item={articles[0]} horizontal />
             <Card item={articles[4]} full />
-            <Block flex card shadow style={styles.category}>
-              <ImageBackground
-                source={{ uri: Images.Products["View article"] }}
-                style={[
-                  styles.imageBlock,
-                  { width: width - theme.SIZES.BASE * 2, height: 252 }
-                ]}
-                imageStyle={{
-                  width: width - theme.SIZES.BASE * 2,
-                  height: 252
-                }}
-              >
-                <Block style={styles.categoryTitle}>
-                  <Text size={18} bold color={theme.COLORS.WHITE}>
-                    View article
-                  </Text>
-                </Block>
-              </ImageBackground>
-            </Block>
           </Block>
         </Block>
       </Block>
@@ -73,7 +50,8 @@ const styles = StyleSheet.create({
     color: argonTheme.COLORS.HEADER
   },
   group: {
-    paddingTop: theme.SIZES.BASE
+    paddingTop: theme.SIZES.BASE,
+    width: width - theme.SIZES.BASE * 2
   },
   category: {
     backgroundColor: theme.COLORS.WHITE,
