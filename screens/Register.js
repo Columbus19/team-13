@@ -1,4 +1,4 @@
-import React from "react";
+import React, { setGlobal } from "reactn";
 import {
   StyleSheet,
   ImageBackground,
@@ -10,24 +10,32 @@ import { Block, Checkbox, Text, theme } from "galio-framework";
 
 import { Button, Icon, Input } from "../components";
 import { Images, argonTheme } from "../constants";
+import  ProgressEnums from "../enums/progressEnums";
 
 const { width, height } = Dimensions.get("screen");
 
 class Register extends React.Component {
+  constructor(){
+    super();
+    setGlobal({
+      userStage: new ProgressEnums().application,
+    });
+  }
+
+  onHandleLogin = () => {
+    const { navigation } = this.props;
+    navigation.navigate("ProgressBar");
+  }
+
   render() {
     return (
-      <Block flex middle>
-        <StatusBar hidden />
+      <Block flex middle style={{height: 300}}>
         <ImageBackground
           source={Images.RegisterBackground}
           style={{ width, height, zIndex: 1 }}
         >
           <Block flex middle>
             <Block style={styles.registerContainer}>
-              <Block flex={0.25} middle style={styles.socialConnect}>
-                <Block row style={{ marginTop: theme.SIZES.BASE }}>
-                </Block>
-              </Block>
               <Block flex>
                 <Block flex={0.17} middle>
                   <Text color="#8898AA" size={30}>
@@ -72,9 +80,13 @@ class Register extends React.Component {
                       />                   
                     </Block>                     
                     <Block middle>
-                      <Button color="primary" style={styles.createButton}>
+                      <Button 
+                      color="primary" 
+                      style={styles.createButton}
+                      onPress={() => {this.onHandleLogin()}}
+                      >
                         <Text bold size={14} color={argonTheme.COLORS.WHITE}>
-                          CREATE ACCOUNT
+                          Login
                         </Text>
                       </Button>
                     </Block>

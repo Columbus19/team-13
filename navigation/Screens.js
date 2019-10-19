@@ -1,4 +1,4 @@
-import React from "react";
+import React, { setGlobal } from "reactn";
 import { Easing, Animated } from "react-native";
 import {
   createStackNavigator,
@@ -186,6 +186,21 @@ const ResumePageStack = createStackNavigator({
   transitionConfig
 });
 
+const LoginPageStack = createStackNavigator({
+  Articles: {
+    screen: Register,
+    navigationOptions: ({ navigation }) => ({
+      header: <Header title="Login" navigation={navigation} />
+    })
+  }
+},{
+  cardStyle: {
+    backgroundColor: "#F8F9FE"
+  },
+  transitionConfig
+});
+
+// divideru se baga ca si cum ar fi un ecrna dar nu-i nimic duh
 const AppStack = createDrawerNavigator(
   {
     Onboarding: {
@@ -253,6 +268,14 @@ const AppStack = createDrawerNavigator(
       navigationOptions: navOpt => ({
         drawerLabel: ({ focused }) => (
           <DrawerItem focused={focused} screen="Application" title="Application" />
+        )
+      })
+    },
+    Login: {
+      screen: LoginPageStack,
+      navigationOptions: navOpt => ({
+        drawerLabel: ({ focused }) => (
+          <DrawerItem focused={focused} screen="Login" title="Login" />
         )
       })
     }
