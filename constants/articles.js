@@ -1,9 +1,9 @@
 export default [
   {
-    title: 'Ice cream is made with carrageenan …',
-    image: 'https://images.unsplash.com/photo-1516559828984-fb3b99548b21?ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80',
+    title: 'INROADS succeeds because of the generosity of individuals, foundations and corporations throughout its history.',
+    image: 'https://inroads.org/wp-content/uploads/2019/02/PwC_recruitment_rotator.png',
     cta: 'View article', 
-    horizontal: true
+    // horizontal: true
   },
   {
     title: 'Is makeup one of your daily esse …',

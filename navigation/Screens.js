@@ -18,6 +18,8 @@ import Elements from "../screens/Elements";
 import Articles from "../screens/Articles";
 import TrainingHome from "../screens/TrainingHome";
 import TrainingVideo from "../screens/TrainingVideo";
+import ResumePage from "../screens/ResumePage";
+import ProgressBar from "../screens/ProgressBar";
 // drawer
 import Menu from "./Menu";
 import DrawerItem from "../components/DrawerItem";
@@ -77,6 +79,20 @@ const ElementsStack = createStackNavigator({
   transitionConfig
 });
 
+const ProgressBarStack = createStackNavigator({
+  Elements: {
+    screen: ProgressBar,
+    navigationOptions: ({ navigation }) => ({
+      header: <Header title="TestProgressBar" navigation={navigation} />
+    })
+  }
+},{
+  cardStyle: {
+    backgroundColor: "#F8F9FE"
+  },
+  transitionConfig
+});
+
 const ArticlesStack = createStackNavigator({
   Articles: {
     screen: Articles,
@@ -101,7 +117,7 @@ const ProfileStack = createStackNavigator(
         ),
         headerTransparent: true
       })
-    }
+    }  
   },
   {
     cardStyle: { backgroundColor: "#FFFFFF" },
@@ -154,6 +170,21 @@ const TrainingStack = createStackNavigator({
   },
   transitionConfig
 });
+      
+
+const ResumePageStack = createStackNavigator({
+  Articles: {
+    screen: ResumePage,
+    navigationOptions: ({ navigation }) => ({
+      header: <Header title="Application" navigation={navigation} />
+    })
+  }
+},{
+  cardStyle: {
+    backgroundColor: "#F8F9FE"
+  },
+  transitionConfig
+});
 
 const AppStack = createDrawerNavigator(
   {
@@ -195,6 +226,12 @@ const AppStack = createDrawerNavigator(
         )
       })
     },
+    ProgressBar: {
+      screen: ProgressBarStack,
+      navigationOptions: navOpt => ({
+        drawerLabel: () => {}
+      })
+    },
     Articles: {
       screen: ArticlesStack,
       navigationOptions: navOpt => ({
@@ -208,6 +245,14 @@ const AppStack = createDrawerNavigator(
       navigationOptions: navOpt => ({
         drawerLabel: ({ focused }) => (
           <DrawerItem focused={focused} screen="Training" title="Training" />
+        )
+      })
+    },
+    ResumePage: {
+      screen: ResumePageStack,
+      navigationOptions: navOpt => ({
+        drawerLabel: ({ focused }) => (
+          <DrawerItem focused={focused} screen="Application" title="Application" />
         )
       })
     }
