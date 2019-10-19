@@ -23,6 +23,7 @@ import ProgressBar from "../screens/ProgressBar";
 ///
 import MockInterview from "../screens/MockInterview";
 import success from "../screens/success";
+import Assessment from "../screens/WebinarAssessment";
 // drawer
 import Menu from "./Menu";
 import DrawerItem from "../components/DrawerItem";
@@ -189,6 +190,20 @@ const ResumePageStack = createStackNavigator({
   transitionConfig
 });
 
+const WebinarAssessmentPageStack = createStackNavigator({
+  Articles: {
+    screen: Assessment,
+    navigationOptions: ({ navigation }) => ({
+      header: <Header title="Webinar Assessment" navigation={navigation} />
+    })
+  }
+},{
+  cardStyle: {
+    backgroundColor: "#F8F9FE"
+  },
+  transitionConfig
+});
+
 const LoginPageStack = createStackNavigator({
   Articles: {
     screen: Register,
@@ -298,6 +313,14 @@ const AppStack = createDrawerNavigator(
       navigationOptions: navOpt => ({
         drawerLabel: ({ focused }) => (
           <DrawerItem focused={focused} screen="Application" title="Application" />
+        )
+      })
+    },
+    Assessment: {
+      screen: WebinarAssessmentPageStack,
+      navigationOptions: navOpt => ({
+        drawerLabel: ({ focused }) => (
+          <DrawerItem focused={focused} screen="Quick learning check" title="Quick learning check" />
         )
       })
     },
