@@ -50,7 +50,7 @@ class Prematching extends React.Component {
 
 const styles = StyleSheet.create({
   logos:{
-    
+
   },
   input: {
     height: 40,
