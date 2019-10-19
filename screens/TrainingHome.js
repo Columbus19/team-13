@@ -34,27 +34,33 @@ class TrainingHome extends React.Component {
           <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
             <Button
               style={styles.button}
-              color={argonTheme.COLORS.PRIMARY}
+              color={argonTheme.COLORS.DEFAULT}
               onPress={() => navigation.navigate("TrainingVideo")}
               textStyle={styles.buttonText}
               >
-              About INROADS >
+              <Text style={styles.buttonText}>About INROADS ></Text>
+              <Text></Text>
+              <Text style={styles.buttonTextSmall}s>0/3 lessons</Text>
             </Button>
             <Button
               style={styles.button}
-              color={argonTheme.COLORS.PRIMARY}
+              color={argonTheme.COLORS.DEFAULT}
               onPress={() => navigation.navigate("TrainingVideo")}
               textStyle={styles.buttonText}
               >
-              Preparing for an internship >
+              <Text style={styles.buttonText}> Preparing for an internship ></Text>
+              <Text></Text>
+              <Text style={styles.buttonTextSmall}>0/5 lessons</Text>
             </Button>
             <Button
               style={styles.button}
-              color={argonTheme.COLORS.PRIMARY}
+              color={argonTheme.COLORS.DEFAULT}
               onPress={() => navigation.navigate("TrainingVideo")}
               textStyle={styles.buttonText}
               >
-              Interviewing skills >
+              <Text style={styles.buttonText}>Interviewing skills ></Text>
+              <Text></Text>
+              <Text style={styles.buttonTextSmall}>0/6 lessons</Text>
             </Button>
           </Block>
         </Block>
@@ -70,9 +76,13 @@ const styles = StyleSheet.create({
     height: height / 5
   },
   buttonText: {
-    color: argonTheme.COLORS.BLACK,
+    color: argonTheme.COLORS.WHITE,
     fontWeight: "bold",
     fontSize: 20
+  },
+  buttonTextSmall:{
+    color: "rgb(180,180,180)",
+    fontSize: 12,
   },
   title: {
     paddingBottom: theme.SIZES.BASE,
