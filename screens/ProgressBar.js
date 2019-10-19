@@ -15,6 +15,19 @@ class ProgressBar extends React.Component {
     this.progressEnums = new ProgressEnums();
   }
 
+  renderLineButton = () => {
+    <Block center>
+      <Button
+        color="primary"
+        style={{
+          width: 10,
+          height: 100
+        }}
+      >
+      </Button>
+    </Block>
+  }
+
   renderStageButton = (text, pageToNav) => {
     var selectedButtonColor = "default";
     var unselectedButtonColor = "secondary";
@@ -56,44 +69,11 @@ class ProgressBar extends React.Component {
         </Text>
         <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
           {this.renderStageButton("Application", this.progressEnums.application)}
-          {/* SPACER LINE */}
-          <Block center>
-            <Button
-              color="info"
-              style={{
-                width: 5,
-                height: 100
-              }}
-            >
-            </Button>
-          </Block>
-          {/* SPACER LINE END*/}
+          {this.renderLineButton()}
           {this.renderStageButton("Training", this.progressEnums.training)}
-          {/* SPACER LINE */}
-          <Block center>
-            <Button
-              color="info"
-              style={{
-                width: 5,
-                height: 100
-              }}
-            >
-            </Button>
-          </Block>
-          {/* SPACER LINE END*/}
+          {this.renderLineButton()}
           {this.renderStageButton("Mock Interview", this.progressEnums.interview)}
-          {/* SPACER LINE */}
-          <Block center>
-            <Button
-              color="info"
-              style={{
-                width: 5,
-                height: 100
-              }}
-            >
-            </Button>
-          </Block>
-          {/* SPACER LINE END*/}
+          {this.renderLineButton()}
           {this.renderStageButton("Finish Application", this.progressEnums.final)}
         </Block>
       </Block>

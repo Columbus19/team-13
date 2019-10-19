@@ -1,23 +1,31 @@
-import React from "react";
+import React, { setGlobal, useGlobal  } from "reactn";
 import { ScrollView, StyleSheet, Dimensions} from "react-native";
 // Galio components
 import { Block, Button, Text, theme } from "galio-framework";
 // Argon themed components
 import { CardTraining } from "../components";
 import { articles, argonTheme} from "../constants/"
+import  ProgressEnums from "../enums/progressEnums";
 
 const { height, width } = Dimensions.get("screen");
 
 const cardWidth = width - theme.SIZES.BASE * 2;
 
 class TrainingHome extends React.Component {
+  onHandleGoToInterview(){
+    setGlobal({
+      userStage: new ProgressEnums().interview,
+    });
+    const { navigation } = this.props;
+    navigation.navigate("ProgressBar");
+  }
+
   render(){
     return(
         <Block flex center>
             <ScrollView
             showsVerticalScrollIndicator={false}>
                 {this.renderButtons()}
-
             </ScrollView>
         </Block>
     );
@@ -55,6 +63,13 @@ class TrainingHome extends React.Component {
               textStyle={styles.buttonText}
               >
               Interviewing skills
+            </Button>
+            <Button
+              color={argonTheme.COLORS.PRIMARY}
+              onPress={() => this.onHandleGoToInterview()}
+              textStyle={styles.buttonText}
+              >
+              To Interview Stage
             </Button>
           </Block>
         </Block>

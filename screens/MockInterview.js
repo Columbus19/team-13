@@ -28,6 +28,7 @@ class MockInterview extends React.Component {
   render(){
     return(
       <ScrollView>
+        <Block flex style={{padding: 20}}>
         <Text style={{fontSize:24}}>Mock Interview</Text>
         <Text style={{fontSize:15}}> For this mock interview you would be prompted with 6 questions 
         regarding your past group or academic experiences. Before answering the questions you would
@@ -83,6 +84,7 @@ class MockInterview extends React.Component {
             6. How would you handle a situation where ...
           </Text>
           <Button onPress={this.onHandleChangeTest}>Record</Button>
+          </Block>
       </ScrollView>
     );
   }

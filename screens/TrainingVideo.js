@@ -1,9 +1,11 @@
-import React from "react";
-import { StyleSheet, Dimensions} from "react-native";
+import React, { setGlobal, useGlobal  } from "reactn";
+import { StyleSheet, Dimensions, WebView} from "react-native";
 // Galio components
 import { Block, Button, Text, theme } from "galio-framework";
 // Argon themed components
-import { argonTheme} from "../constants/"
+import { argonTheme} from "../constants/";
+import YouTube from 'react-native-youtube';
+
 
 const { width } = Dimensions.get("screen");
 
@@ -11,19 +13,15 @@ class TrainingVideo extends React.Component {
     render(){
       const { navigation } = this.props;
       return(
-          <Block flex center>
-              <Text bold size={42} style={styles.title}>
-                Insert Vid Here
-              </Text>
-              <Button
-              style={styles.button}
-              color={argonTheme.COLORS.PRIMARY}
-              onPress={() => navigation.navigate("TrainingVideo")}
-              textStyle={styles.buttonText}
-              >
-              >
-            </Button>
-          </Block>
+        <Block>
+          <Button
+            style={styles.button}
+            color={argonTheme.COLORS.PRIMARY}
+            onPress={() => navigation.navigate("TrainingVideo")}
+            textStyle={styles.buttonText}
+          >
+          </Button>
+        </Block>
       );
     }
   }
