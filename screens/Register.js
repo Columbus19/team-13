@@ -14,6 +14,12 @@ import { Images, argonTheme } from "../constants";
 const { width, height } = Dimensions.get("screen");
 
 class Register extends React.Component {
+  onHandleLogin = () => {
+    global.userState.advanceToApplication();
+    const { navigation } = this.props;
+    navigation.navigate("ProgressBar");
+  }
+
   render() {
     return (
       <Block flex middle>
@@ -72,9 +78,13 @@ class Register extends React.Component {
                       />                   
                     </Block>                     
                     <Block middle>
-                      <Button color="primary" style={styles.createButton}>
+                      <Button 
+                      color="primary" 
+                      style={styles.createButton}
+                      onPress={() => {this.onHandleLogin()}}
+                      >
                         <Text bold size={14} color={argonTheme.COLORS.WHITE}>
-                          CREATE ACCOUNT
+                          Login
                         </Text>
                       </Button>
                     </Block>
