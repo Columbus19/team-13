@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 40,
-    backgroundColor: white,
+    backgroundColor: 'white',
     marginBottom: 20
   }
 });
