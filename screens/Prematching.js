@@ -17,22 +17,29 @@ class Prematching extends React.Component {
       userStage: new ProgressEnums().training,
     });
     const { navigation } = this.props;
-    navigation.navigate("Success");
+    navigation.navigate("ProgressBar");
   }
 
   render(){
     return(
-    <Block center>
-      <Block>
-        <Image source={Images.chase} style={styles.logos}/>
+    <Block center style={{marginTop: 20}}>
+      <Text h1 bold>
+        Possible Matches
+      </Text>
+      <Text h5 center style={{marginBottom: 50}}>
+        Continue to see who you interview with!
+      </Text>
+
+      <Block style={{marginBottom: 20}}>
+        <Image source={Images.chase} style={{width: 300, height: 100}}/>
       </Block>
 
-      <Block>
-        <Image source={Images.honeywell} style={styles.logos}/>
+      <Block style={{marginBottom: 20}}>
+        <Image source={Images.honeywell} style={styles.logos} style={{width: 300, height: 100}}/>
       </Block>
 
-      <Block>
-        <Image source={Images.comcast} style={styles.logos}/>
+      <Block style={{marginBottom: 20}}>
+        <Image source={Images.comcast} style={styles.logos} style={{width: 300, height: 100}}/>
       </Block>
 
       <Block center style={{paddingBottom: 30, paddingTop: 50}}>
