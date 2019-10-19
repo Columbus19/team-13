@@ -29,7 +29,7 @@ class ResumePage extends React.Component {
       userStage: new ProgressEnums().training,
     });
     const { navigation } = this.props;
-    navigation.navigate("ProgressBar");
+    navigation.navigate("Prematching");
   }
 
   renderExperience = () => {

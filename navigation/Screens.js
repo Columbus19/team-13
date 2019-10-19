@@ -20,9 +20,10 @@ import TrainingHome from "../screens/TrainingHome";
 import TrainingVideo from "../screens/TrainingVideo";
 import ResumePage from "../screens/ResumePage";
 import ProgressBar from "../screens/ProgressBar";
+import Prematching from "../screens/Prematching";
 ///
 import MockInterview from "../screens/MockInterview";
-import success from "../screens/success";
+import Success from "../screens/Success";
 import Assessment from "../screens/WebinarAssessment";
 // drawer
 import Menu from "./Menu";
@@ -232,9 +233,9 @@ const MockInterviewStack = createStackNavigator({
   transitionConfig
 });
 
-const successStack = createStackNavigator({
-  success: {
-    screen: success,
+const SuccessStack = createStackNavigator({
+  Success: {
+    screen: Success,
     navigationOptions: ({ navigation }) => ({
       header: <Header title="Success Page" navigation={navigation} />
     })
@@ -245,6 +246,27 @@ const successStack = createStackNavigator({
   },
   transitionConfig
 });
+
+const PrematchingStack = createStackNavigator({
+  Prematching: {
+    screen: Prematching,
+    navigationOptions: ({
+      navigation
+    }) => ({
+      header: < Header title = "Prematch"
+      navigation = {
+        navigation
+      }
+      />
+    })
+  }
+}, {
+  cardStyle: {
+    backgroundColor: "#F8F9FE"
+  },
+  transitionConfig
+});
+
 // divideru se baga ca si cum ar fi un ecrna dar nu-i nimic duh
 const AppStack = createDrawerNavigator(
   {
@@ -340,8 +362,22 @@ const AppStack = createDrawerNavigator(
         )
       })
     },
-    success: {
-      screen: successStack,
+    Prematching: {
+      screen: PrematchingStack,
+      navigationOptions: navOpt => ({
+        drawerLabel: ({
+          focused
+        }) => ( <
+          DrawerItem focused = {
+            focused
+          }
+          screen = "Prematching"
+          title = "Prematching" / >
+        )
+      })
+    },
+    Success: {
+      screen: SuccessStack,
       navigationOptions: navOpt => ({
         drawerLabel: ({ focused }) => (
           <DrawerItem focused={focused} screen="Success Page" title="Success Page" />

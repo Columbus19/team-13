@@ -9,7 +9,7 @@ import ProgressEnums from "../enums/progressEnums";
 
 const { width } = Dimensions.get("screen");
 
-class success extends React.Component {
+class Success extends React.Component {
 
   onHandleSubmit = () => {
     setGlobal({
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     },
   });
   
-export default success;
+export default Success;
 
 
 
