@@ -16,6 +16,7 @@ import Profile from "../screens/Profile";
 import Register from "../screens/Register";
 import Elements from "../screens/Elements";
 import Articles from "../screens/Articles";
+import ProgressBar from "../screens/ProgressBar";
 // drawer
 import Menu from "./Menu";
 import DrawerItem from "../components/DrawerItem";
@@ -66,6 +67,20 @@ const ElementsStack = createStackNavigator({
     screen: Elements,
     navigationOptions: ({ navigation }) => ({
       header: <Header title="Elements" navigation={navigation} />
+    })
+  }
+},{
+  cardStyle: {
+    backgroundColor: "#F8F9FE"
+  },
+  transitionConfig
+});
+
+const TestProgressBarStack = createStackNavigator({
+  Elements: {
+    screen: ProgressBar,
+    navigationOptions: ({ navigation }) => ({
+      header: <Header title="TestProgressBar" navigation={navigation} />
     })
   }
 },{
@@ -170,6 +185,14 @@ const AppStack = createDrawerNavigator(
       navigationOptions: navOpt => ({
         drawerLabel: ({ focused }) => (
           <DrawerItem focused={focused} screen="Elements" title="Elements" />
+        )
+      })
+    },
+    TestProgressBar: {
+      screen: TestProgressBarStack,
+      navigationOptions: navOpt => ({
+        drawerLabel: ({ focused }) => (
+          <DrawerItem focused={focused} screen="TestProgressBar" title="TestProgressBar" />
         )
       })
     },
