@@ -15,10 +15,7 @@ class Assessment extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-        Option1: false,
-        Option2: false,
-        Option3: false,
-        Option4: false
+      options: [false, false, false, false]
     }
   }
 
@@ -43,6 +40,17 @@ class Assessment extends React.Component {
         </Text>);
   }
   
+  onHandleChangeCheckbox = (index) => {
+    var newOptions = [];
+    for(var i = 0; i < this.state.options.length; ++i){
+      if(i+1 == index) newOptions.push(true);
+      else newOptions.push(false);
+    }
+    this.setState({
+      options: newOptions
+    });
+  }
+
   render(){
     return(
       <ScrollView>
@@ -59,32 +67,40 @@ class Assessment extends React.Component {
           title = 'Option 1'
           checkedIcon = 'dot-circle-o'
           uncheckedIcon = 'circle-o'
-          checked = {this.state.Option1}
-          onPress={() => this.setState({Option1: !this.state.Option1})}
+          checked = {this.state.options[0]}
+            onPress = {
+              () => this.onHandleChangeCheckbox(1)
+            }
         />
 
         <CheckBox
           title = 'Option 2'
           checkedIcon = 'dot-circle-o'
           uncheckedIcon = 'circle-o'
-          checked = {this.state.Option2}
-          onPress={() => this.setState({Option2: !this.state.Option2})}
+          checked = {this.state.options[1]}
+            onPress = {
+              () => this.onHandleChangeCheckbox(2)
+            }
         />
 
         <CheckBox
           title = 'Option 3'
           checkedIcon = 'dot-circle-o'
           uncheckedIcon = 'circle-o'
-          checked = {this.state.Option3}
-          onPress={() => this.setState({Option3: !this.state.Option3})}
+          checked = {this.state.options[2]}
+          onPress = {
+            () => this.onHandleChangeCheckbox(3)
+          }
         />
 
         <CheckBox
           title = 'Option 4'
           checkedIcon = 'dot-circle-o'
           uncheckedIcon = 'circle-o'
-          checked = {this.state.Option4}
-          onPress={() => this.setState({Option4: !this.state.Option4})}
+          checked = {this.state.options[3]}
+                    onPress = {
+                      () => this.onHandleChangeCheckbox(4)
+                    }
         />
          
 
