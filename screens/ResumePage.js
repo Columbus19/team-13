@@ -927,7 +927,7 @@ class ResumePage extends React.Component {
 
         <Block center style={{paddingBottom: 30, paddingTop: 50}}>
             <Button color="success" style={{marginBottom: theme.SIZES.BASE, width: width - theme.SIZES.BASE * 2}}>
-              SUCCESS
+              Submit!
             </Button>
         </Block>
       </ScrollView>

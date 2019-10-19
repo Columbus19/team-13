@@ -18,6 +18,7 @@ import Elements from "../screens/Elements";
 import Articles from "../screens/Articles";
 import ResumePage from "../screens/ResumePage";
 import ProgressBar from "../screens/ProgressBar";
+import Assessment from "../screens/WebinarAssessment";
 // drawer
 import Menu from "./Menu";
 import DrawerItem from "../components/DrawerItem";
