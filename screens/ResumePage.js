@@ -764,7 +764,166 @@ class ResumePage extends React.Component {
           <Input multiline="true" scroll="true" right placeholder="Enter description here" iconContent={<Block />} />
         </Block>
 
+        {/*Activities and Awards Inputs*/}
+        <Text
+          h3
+          style={{ marginBottom: theme.SIZES.BASE / 2, textAlign: "center", textDecorationLine: "underline", paddingTop: 10 }}
+          color={argonTheme.COLORS.DEFAULT}>
+          Activities and Awards
+        </Text>
+
+        <Text
+          h4
+          style={{ marginBottom: theme.SIZES.BASE / 2, textAlign: "left", fontWeight: "bold" }}
+          color={argonTheme.COLORS.DEFAULT}>
+          Activities/Awards(1)
+        </Text>
+
+        <Text
+          h5
+          style={{ marginBottom: theme.SIZES.BASE / 2, marginLeft: 15 }}
+          color={argonTheme.COLORS.DEFAULT}
+        >
+          Organization/Accomplishment/Achievement
+        </Text>
+        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
+          <Input multiline="true" scroll="true" right placeholder="ex. Florida Bright Futures Scholarship" iconContent={<Block />} />
+        </Block>
+
+        <Text
+          h5
+          style={{ marginBottom: theme.SIZES.BASE / 2, marginLeft: 15 }}
+          color={argonTheme.COLORS.DEFAULT}
+        >
+          Role
+        </Text>
+        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
+          <Input multiline="true" scroll="true" right placeholder="ex. Recipient" iconContent={<Block />} />
+        </Block>
+
+        <Text
+          h5
+          style={{ marginBottom: theme.SIZES.BASE / 2, marginLeft: 15 }}
+          color={argonTheme.COLORS.DEFAULT}
+        >
+          Start Date
+        </Text>
+        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
+          <Input multiline="true" scroll="true" right placeholder="ex. October 2013" iconContent={<Block />} />
+        </Block>
+
+        <Text
+          h5
+          style={{ marginBottom: theme.SIZES.BASE / 2, marginLeft: 15 }}
+          color={argonTheme.COLORS.DEFAULT}
+        >
+          End date (Enter Present if currently position)
+        </Text>
+        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
+          <Input multiline="true" scroll="true" right placeholder="ex. November 2014" iconContent={<Block />} />
+        </Block>
         
+        <Text
+          h4
+          style={{ marginBottom: theme.SIZES.BASE / 2, textAlign: "left", fontWeight: "bold" }}
+          color={argonTheme.COLORS.DEFAULT}>
+          Activities/Awards(2)
+        </Text>
+
+        <Text
+          h5
+          style={{ marginBottom: theme.SIZES.BASE / 2, marginLeft: 15 }}
+          color={argonTheme.COLORS.DEFAULT}
+        >
+          Organization/Accomplishment/Achievement
+        </Text>
+        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
+          <Input multiline="true" scroll="true" right placeholder="ex. Florida Bright Futures Scholarship" iconContent={<Block />} />
+        </Block>
+
+        <Text
+          h5
+          style={{ marginBottom: theme.SIZES.BASE / 2, marginLeft: 15 }}
+          color={argonTheme.COLORS.DEFAULT}
+        >
+          Role
+        </Text>
+        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
+          <Input multiline="true" scroll="true" right placeholder="ex. Recipient" iconContent={<Block />} />
+        </Block>
+
+        <Text
+          h5
+          style={{ marginBottom: theme.SIZES.BASE / 2, marginLeft: 15 }}
+          color={argonTheme.COLORS.DEFAULT}
+        >
+          Start Date
+        </Text>
+        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
+          <Input multiline="true" scroll="true" right placeholder="ex. October 2013" iconContent={<Block />} />
+        </Block>
+
+        <Text
+          h5
+          style={{ marginBottom: theme.SIZES.BASE / 2, marginLeft: 15 }}
+          color={argonTheme.COLORS.DEFAULT}
+        >
+          End date (Enter Present if currently position)
+        </Text>
+        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
+          <Input multiline="true" scroll="true" right placeholder="ex. November 2014" iconContent={<Block />} />
+        </Block>
+
+        <Text
+          h4
+          style={{ marginBottom: theme.SIZES.BASE / 2, textAlign: "left", fontWeight: "bold" }}
+          color={argonTheme.COLORS.DEFAULT}>
+          Activities/Awards(3)
+        </Text>
+
+        <Text
+          h5
+          style={{ marginBottom: theme.SIZES.BASE / 2, marginLeft: 15 }}
+          color={argonTheme.COLORS.DEFAULT}
+        >
+          Organization/Accomplishment/Achievement
+        </Text>
+        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
+          <Input multiline="true" scroll="true" right placeholder="ex. Florida Bright Futures Scholarship" iconContent={<Block />} />
+        </Block>
+
+        <Text
+          h5
+          style={{ marginBottom: theme.SIZES.BASE / 2, marginLeft: 15 }}
+          color={argonTheme.COLORS.DEFAULT}
+        >
+          Role
+        </Text>
+        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
+          <Input multiline="true" scroll="true" right placeholder="ex. Recipient" iconContent={<Block />} />
+        </Block>
+
+        <Text
+          h5
+          style={{ marginBottom: theme.SIZES.BASE / 2, marginLeft: 15 }}
+          color={argonTheme.COLORS.DEFAULT}
+        >
+          Start Date
+        </Text>
+        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
+          <Input multiline="true" scroll="true" right placeholder="ex. October 2013" iconContent={<Block />} />
+        </Block>
+
+        <Text
+          h5
+          style={{ marginBottom: theme.SIZES.BASE / 2, marginLeft: 15 }}
+          color={argonTheme.COLORS.DEFAULT}
+        >
+          End date (Enter Present if currently position)
+        </Text>
+        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
+          <Input multiline="true" scroll="true" right placeholder="ex. November 2014" iconContent={<Block />} />
+        </Block>
       </ScrollView>
     );
   }
