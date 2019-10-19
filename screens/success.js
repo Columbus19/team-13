@@ -13,7 +13,7 @@ class Success extends React.Component {
 
   onHandleSubmit = () => {
     setGlobal({
-      userStage: new ProgressEnums().training,
+      userStage: new ProgressEnums().final,
     });
     const { navigation } = this.props;
     navigation.navigate("ProgressBar");
@@ -28,6 +28,15 @@ class Success extends React.Component {
           source={{uri: 'https://raw.githubusercontent.com/mastermoo/rn-emoji-feedback/master/src/assets/smile_big.png'}}
         />
         </View>
+
+        <Block style={{padding: 30}}>
+          <Text h1 center>
+            Thank you for completing the application.
+          </Text>
+          <Text h3 center>
+            A representive with reach out with your matches soon, provided you reached all of the requirements.
+          </Text>
+        </Block>
 
       <Block center style={{paddingBottom: 30, paddingTop: 50}}>
         <Button color="success" 
@@ -58,7 +67,7 @@ class Success extends React.Component {
 const styles = StyleSheet.create({
     Container: {
         
-        paddingTop: 320,
+        paddingTop: 120,
       justifyContent: 'center',
       alignItems: 'center',
     },

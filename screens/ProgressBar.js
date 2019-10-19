@@ -15,18 +15,18 @@ class ProgressBar extends React.Component {
     this.progressEnums = new ProgressEnums();
   }
 
-  renderLineButton = () => {
-    <Block center>
-       <Button
-          color="info"
-          style={{
-          width: 3,
-          height: 50
-        }}
-        >
-      </Button>
-    </Block>
-  }
+  // renderLineButton = () => {
+  //   <Block center>
+  //      <Button
+  //         color="info"
+  //         style={{
+  //         width: 3,
+  //         height: 50
+  //       }}
+  //       >
+  //     </Button>
+  //   </Block>
+  // }
 
   renderStageButton = (text, pageToNav) => {
     var selectedButtonColor = "default";
@@ -66,12 +66,10 @@ class ProgressBar extends React.Component {
   renderButtons = () => {
     return (
       <Block flex>
-        <Text bold size={32} style={styles.title}>
-          Application Progress
+        <Text h1 bold size={30} style={styles.title}>
+          Progress
         </Text>
-        {/* SPACER LINE */}
-        {/* SPACER LINE */}
-        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
+        <Block style={{ paddingHorizontal: theme.SIZES.BASE, marginTop: 100 }}>
           {this.renderStageButton("Application", this.progressEnums.application)}
           <Block center>
             <Button
@@ -127,7 +125,8 @@ const styles = StyleSheet.create({
     paddingBottom: theme.SIZES.BASE,
     paddingHorizontal: theme.SIZES.BASE * 2,
     marginTop: 44,
-    color: argonTheme.COLORS.HEADER
+    color: argonTheme.COLORS.HEADER,
+    textAlign: "center"
   },
   group: {
     paddingTop: theme.SIZES.BASE * 2

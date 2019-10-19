@@ -5,7 +5,7 @@ class ProgressEnums {
         this.prematching = "Prematching";
         this.training = "Training"; 
         this.interview = "MockInterview"; 
-        this.final = "Profile"; 
+        this.final = "Success"; 
     }
 }
 

@@ -180,30 +180,33 @@ class Header extends React.Component {
     ];
 
     return (
-      <Block style={headerStyles}>
-        <NavBar
-          back={back}
-          title={title}
-          style={navbarStyles}
-          transparent={transparent}
-          right={this.renderRight()}
-          rightStyle={{ alignItems: 'center' }}
-          left={
-            <Icon 
-              name={back ? 'nav-left' : "menu-8"} family="ArgonExtra" 
-              size={14} onPress={this.handleLeftPress} 
-              color={iconColor || argonTheme.COLORS.ICON}/>
-          }
-          leftStyle={{ paddingVertical: 12, flex: 0.2 }}
-          titleStyle={[
-            styles.title,
-            { color: argonTheme.COLORS[white ? 'WHITE' : 'HEADER'] },
-            titleColor && { color: titleColor }
-          ]}
-          {...props}
-        />
-        {this.renderHeader()}
+      <Block style={{marginTop: 50, height: 1}}>
+
       </Block>
+      // <Block style={headerStyles}>
+      //   <NavBar
+      //     back={back}
+      //     title={title}
+      //     style={navbarStyles}
+      //     transparent={transparent}
+      //     right={this.renderRight()}
+      //     rightStyle={{ alignItems: 'center' }}
+      //     left={
+      //       <Icon 
+      //         name={back ? 'nav-left' : "menu-8"} family="ArgonExtra" 
+      //         size={14} onPress={this.handleLeftPress} 
+      //         color={iconColor || argonTheme.COLORS.ICON}/>
+      //     }
+      //     leftStyle={{ paddingVertical: 12, flex: 0.2 }}
+      //     titleStyle={[
+      //       styles.title,
+      //       { color: argonTheme.COLORS[white ? 'WHITE' : 'HEADER'] },
+      //       titleColor && { color: titleColor }
+      //     ]}
+      //     {...props}
+      //   />
+      //   {this.renderHeader()}
+      // </Block>
     );
   }
 }

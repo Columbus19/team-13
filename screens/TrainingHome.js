@@ -86,6 +86,8 @@ class TrainingHome extends React.Component {
 
 const styles = StyleSheet.create({
   button: {
+    backgroundColor: "#172B4D",
+    borderRadius: 20,
     marginBottom: 20,
     position: 'relative',
     height: height / 8
