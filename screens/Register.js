@@ -30,6 +30,7 @@ class Register extends React.Component {
   render() {
     return (
       <Block flex middle style={{height: 300}}>
+        <StatusBar hidden />
         <ImageBackground
           source={Images.RegisterBackground}
           style={{ width, height, zIndex: 1 }}
@@ -86,7 +87,7 @@ class Register extends React.Component {
                       onPress={() => {this.onHandleLogin()}}
                       >
                         <Text bold size={14} color={argonTheme.COLORS.WHITE}>
-                          Login
+                          Go
                         </Text>
                       </Button>
                     </Block>

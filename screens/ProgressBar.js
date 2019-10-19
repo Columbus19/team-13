@@ -17,20 +17,20 @@ class ProgressBar extends React.Component {
 
   renderLineButton = () => {
     <Block center>
-      <Button
-        color="primary"
-        style={{
-          width: 10,
-          height: 100
+       <Button
+          color="info"
+          style={{
+          width: 3,
+          height: 50
         }}
-      >
+        >
       </Button>
     </Block>
   }
 
   renderStageButton = (text, pageToNav) => {
     var selectedButtonColor = "default";
-    var unselectedButtonColor = "secondary";
+    var unselectedButtonColor = "lightGray";
 
     const isSelected = this.global.userStage == pageToNav;
 
@@ -40,19 +40,21 @@ class ProgressBar extends React.Component {
             <Button 
             color={selectedButtonColor} 
             style={styles.button}
+            textStyle={styles.selectedButtonText}
             onPress={() => this.props.navigation.navigate(pageToNav)}
             >
-              {text}
+              {text + "   >"}
           </Button>
         </Block>
       );
     }else{
       return(
         <Block center>
-            <Button 
+            <Button
+            disabled={true} 
             color={unselectedButtonColor} 
             style={styles.button}
-            textStyle={{ color: "black", fontSize: 12, fontWeight: "700" }}
+            textStyle={styles.unselectedButtonText}
             >
               {text}
           </Button>
@@ -64,17 +66,46 @@ class ProgressBar extends React.Component {
   renderButtons = () => {
     return (
       <Block flex>
-        <Text bold size={16} style={styles.title}>
-          Progress
+        <Text bold size={32} style={styles.title}>
+          Application Progress
         </Text>
+        {/* SPACER LINE */}
+        {/* SPACER LINE */}
         <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
           {this.renderStageButton("Application", this.progressEnums.application)}
-          {this.renderLineButton()}
+          <Block center>
+            <Button
+              color="info"
+              style={{
+                width: 3,
+                height: 50
+              }}
+            >
+            </Button>
+          </Block>
           {this.renderStageButton("Training", this.progressEnums.training)}
-          {this.renderLineButton()}
+          <Block center>
+            <Button
+              color="info"
+              style={{
+                width: 3,
+                height: 50
+              }}
+            >
+            </Button>
+          </Block>
           {this.renderStageButton("Mock Interview", this.progressEnums.interview)}
-          {this.renderLineButton()}
-          {this.renderStageButton("Finish Application", this.progressEnums.final)}
+          <Block center>
+            <Button
+              color="info"
+              style={{
+                width: 3,
+                height: 50
+              }}
+            >
+            </Button>
+          </Block>
+          {this.renderStageButton("Success", this.progressEnums.Success)}
         </Block>
       </Block>
     );
@@ -111,7 +142,9 @@ const styles = StyleSheet.create({
   button: {
     marginTop: theme.SIZES.BASE / 2,
     marginBottom: theme.SIZES.BASE / 2 ,
-    width: width - theme.SIZES.BASE * 2,
+    // width: width - theme.SIZES.BASE * 2,
+    width: width / 2,
+    height: 60,
     borderRadius: 99,
   },
   optionsButton: {
@@ -119,6 +152,16 @@ const styles = StyleSheet.create({
     height: 34,
     paddingHorizontal: theme.SIZES.BASE,
     paddingVertical: 10
+  },
+  selectedButtonText: {
+    color: "white",
+    fontSize: 18,
+    fontWeight: "600"
+  },
+  unselectedButtonText: {
+    color: "grey",
+    fontSize: 18,
+    fontWeight: "600"
   },
   input: {
     borderBottomWidth: 1

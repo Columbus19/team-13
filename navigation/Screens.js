@@ -85,10 +85,13 @@ const ElementsStack = createStackNavigator({
 });
 
 const ProgressBarStack = createStackNavigator({
-  Elements: {
+  ProgressBar: {
     screen: ProgressBar,
     navigationOptions: ({ navigation }) => ({
-      header: <Header title="TestProgressBar" navigation={navigation} />
+      // header: (
+      //   <Header white transparent title="" iconColor={'#FFF'} navigation={navigation} />
+      // ),
+      headerTransparent: true
     })
   }
 },{
@@ -117,10 +120,10 @@ const ProfileStack = createStackNavigator(
     Profile: {
       screen: Profile,
       navigationOptions: ({ navigation }) => ({
-        header: (
-          <Header white transparent title="Profile" iconColor={'#FFF'} navigation={navigation} />
-        ),
-        headerTransparent: true
+        // header: (
+        //   <Header white transparent title="Profile" iconColor={'#FFF'} navigation={navigation} />
+        // ),
+        // headerTransparent: true
       })
     }  
   },
@@ -160,13 +163,13 @@ const TrainingStack = createStackNavigator({
   TrainingHome: {
     screen: TrainingHome,
     navigationOptions: ({ navigation }) => ({
-      header: <Header title="Training" navigation={navigation} />
+      header: <Header back title="Training" navigation={navigation} />
     })
   },
   TrainingVideo: {
     screen: TrainingVideo,
     navigationOptions: ({ navigation }) => ({
-      header: <Header title="Training" navigation={navigation} />
+      header: <Header back title="Training" navigation={navigation} />
     })
   }
 },{
@@ -181,7 +184,8 @@ const ResumePageStack = createStackNavigator({
   Articles: {
     screen: ResumePage,
     navigationOptions: ({ navigation }) => ({
-      header: <Header title="Application" navigation={navigation} />
+      // header: <Header title="Application"  navigation={navigation} />
+      headerTransparent: true
     })
   }
 },{
@@ -209,7 +213,10 @@ const LoginPageStack = createStackNavigator({
   Articles: {
     screen: Register,
     navigationOptions: ({ navigation }) => ({
-      header: <Header title="Login" navigation={navigation} />
+      // header: (
+      //   <Header white transparent title="Profile" iconColor={'#FFF'} navigation={navigation} />
+      // ),
+      headerTransparent: true
     })
   }
 },{

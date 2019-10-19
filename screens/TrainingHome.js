@@ -42,27 +42,33 @@ class TrainingHome extends React.Component {
           <Block style={{ padding: 20}}>
             <Button
               style={styles.button}
-              color="primary"
+              color={argonTheme.COLORS.DEFAULT}
               onPress={() => navigation.navigate("TrainingVideo")}
               textStyle={styles.buttonText}
               >
-              About INROADS
+              <Text style={styles.buttonText}>About INROADS ></Text>
+              <Text></Text>
+              <Text style={styles.buttonTextSmall}s>0/3 lessons</Text>
             </Button>
             <Button
               style={styles.button}
-              color="primary"
+              color={argonTheme.COLORS.DEFAULT}
               onPress={() => navigation.navigate("TrainingVideo")}
               textStyle={styles.buttonText}
               >
-              Preparing for an internship
+              <Text style={styles.buttonText}> Preparing for an internship ></Text>
+              <Text></Text>
+              <Text style={styles.buttonTextSmall}>0/5 lessons</Text>
             </Button>
             <Button
               style={styles.button}
-              color="primary"
+              color={argonTheme.COLORS.DEFAULT}
               onPress={() => navigation.navigate("TrainingVideo")}
               textStyle={styles.buttonText}
               >
-              Interviewing skills
+              <Text style={styles.buttonText}>Interviewing skills ></Text>
+              <Text></Text>
+              <Text style={styles.buttonTextSmall}>0/6 lessons</Text>
             </Button>
             <Button
               color="success"
@@ -87,12 +93,17 @@ const styles = StyleSheet.create({
   buttonText: {
     color: argonTheme.COLORS.WHITE,
     fontWeight: "bold",
-    fontSize: 16
+    fontSize: 20
+  },
+  buttonTextSmall:{
+    color: "rgb(180,180,180)",
+    fontSize: 12,
   },
   title: {
     paddingBottom: theme.SIZES.BASE,
     paddingHorizontal: theme.SIZES.BASE * 2,
     marginTop: 22,
+    fontSize: 24,
     color: argonTheme.COLORS.HEADER
   },
   group: {
