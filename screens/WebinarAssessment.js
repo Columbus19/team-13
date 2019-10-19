@@ -1,4 +1,4 @@
-import React from "react";
+import React, { setGlobal } from "reactn";
 import { ScrollView, StyleSheet, Dimensions, View, TextInput } from "react-native";
 import { CheckBox } from "react-native-elements";
 // Galio components
@@ -6,6 +6,7 @@ import { Block, Text, Button as GaButton, theme } from "galio-framework";
 // Argon themed components
 import { argonTheme, tabs } from "../constants";
 import { Button, Select, Icon, Input, Header, Switch } from "../components";
+import ProgressEnums from "../enums/progressEnums";
 
 const { width } = Dimensions.get("screen");
 
@@ -21,6 +22,17 @@ class Assessment extends React.Component {
     }
   }
 
+  onHandleSubmit = () => {
+    setGlobal({
+      userStage: new ProgressEnums().training,
+    });
+    const {
+      navigation
+    } = this.props;
+    navigation.navigate("ProgressBar");
+  }
+
+
   //displays questions
   QuestionNumber = (question) => {
     return (<Text
@@ -29,19 +41,6 @@ class Assessment extends React.Component {
             color={argonTheme.COLORS.DEFAULT}>
         "{question}"
         </Text>);
-  }
-
-  //displays buttons and options 
-  ButtonOptions = (Option,OptionNum) => {
-    return (
-      <CheckBox
-        center
-        title= {Option}
-        style={styles.checkboxes}
-        clicked = {this.state.OptionNum}
-        onPress={() => this.setState({checked: !this.state.clicked})}
-      />
-    );
   }
   
   render(){
@@ -56,8 +55,6 @@ class Assessment extends React.Component {
 
         {this.QuestionNumber("Question")}
 
-
-        
         <CheckBox
           title = 'Option 1'
           checkedIcon = 'dot-circle-o'

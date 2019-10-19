@@ -16,6 +16,13 @@ class TrainingVideo extends React.Component {
               </Text>
           </Block>
       );
+      <Block center style={{paddingBottom: 30, paddingTop: 50}}>
+            <Button color="success" 
+            style={{marginBottom: theme.SIZES.BASE, width: width - theme.SIZES.BASE * 2}}
+            onPress={() => {this.onHandleSubmit()}}>
+              Finished video? Click here
+            </Button>
+        </Block>
     }
   }
   
