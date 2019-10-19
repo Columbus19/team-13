@@ -17,6 +17,7 @@ import Register from "../screens/Register";
 import Elements from "../screens/Elements";
 import Articles from "../screens/Articles";
 import TrainingHome from "../screens/TrainingHome";
+import TrainingVideo from "../screens/TrainingVideo";
 // drawer
 import Menu from "./Menu";
 import DrawerItem from "../components/DrawerItem";
@@ -134,9 +135,15 @@ const HomeStack = createStackNavigator(
   }
 );
 
-const TrainingHomeStack = createStackNavigator({
-  Articles: {
+const TrainingStack = createStackNavigator({
+  TrainingHome: {
     screen: TrainingHome,
+    navigationOptions: ({ navigation }) => ({
+      header: <Header title="Training" navigation={navigation} />
+    })
+  },
+  TrainingVideo: {
+    screen: TrainingVideo,
     navigationOptions: ({ navigation }) => ({
       header: <Header title="Training" navigation={navigation} />
     })
@@ -148,7 +155,6 @@ const TrainingHomeStack = createStackNavigator({
   transitionConfig
 });
 
-// divideru se baga ca si cum ar fi un ecrna dar nu-i nimic duh
 const AppStack = createDrawerNavigator(
   {
     Onboarding: {
@@ -197,8 +203,8 @@ const AppStack = createDrawerNavigator(
         )
       })
     },
-    TrainingHome: {
-      screen: TrainingHomeStack,
+    Training: {
+      screen: TrainingStack,
       navigationOptions: navOpt => ({
         drawerLabel: ({ focused }) => (
           <DrawerItem focused={focused} screen="Training" title="Training" />
