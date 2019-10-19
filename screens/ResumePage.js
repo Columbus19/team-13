@@ -924,6 +924,12 @@ class ResumePage extends React.Component {
         <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
           <Input multiline="true" scroll="true" right placeholder="ex. November 2014" iconContent={<Block />} />
         </Block>
+
+        <Block center style={{paddingBottom: 30, paddingTop: 50}}>
+            <Button color="success" style={{marginBottom: theme.SIZES.BASE, width: width - theme.SIZES.BASE * 2}}>
+              SUCCESS
+            </Button>
+        </Block>
       </ScrollView>
     );
   }
