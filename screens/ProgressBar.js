@@ -5,31 +5,87 @@ import { Block, Text, Button as GaButton, theme } from "galio-framework";
 // Argon themed components
 import { argonTheme, tabs } from "../constants/";
 import { Button, Select, Icon, Input, Header, Switch } from "../components/";
-import { ProgressEnums} from "../enums/progressEnums";
+import  ProgressEnums from "../enums/progressEnums";
 
 const { width } = Dimensions.get("screen");
 
 class ProgressBar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.progressEnums = new ProgressEnums();
+  }
 
-  state = {
-    "switch-1": true,
-    "switch-2": false
-  };
+  renderStageButton = (text, pageToNav) => {
+    var selectedButtonColor = "default";
+    var unselectedButtonColor = "secondary";
 
-  toggleSwitch = switchId =>
-    this.setState({ [switchId]: !this.state[switchId] });
+    const isSelected = global.userState.stage == pageToNav;
+
+    if(isSelected){
+      return(
+        <Block center>
+            <Button 
+            color={selectedButtonColor} 
+            style={styles.button}
+            onPress={() => this.props.navigation.navigate(pageToNav)}
+            >
+              {text}
+          </Button>
+        </Block>
+      );
+    }else{
+      return(
+        <Block center>
+            <Button 
+            color={unselectedButtonColor} 
+            style={styles.button}
+            textStyle={{ color: "black", fontSize: 12, fontWeight: "700" }}
+            >
+              {text}
+          </Button>
+        </Block>
+      );
+    }
+  }
 
   renderButtons = () => {
-    const { navigation } = this.props;
+    var selectedButton = "default";
+    var unselectedButton = "secondary";
+
+    const applicationColor = this.props.stage === this.progressEnums.application ? selectedButton : unselectedButton;
+    const trainingColor = this.props.stage === this.progressEnums.training ? selectedButton : unselectedButton;
+    const interviewColor = this.props.stage === this.progressEnums.interview ? selectedButton : unselectedButton;
+    const finalColor = this.props.stage === this.progressEnums.final ? selectedButton : unselectedButton;
+
     return (
       <Block flex>
         <Text bold size={16} style={styles.title}>
           Progress
         </Text>
+        <Text bold size={16} style={styles.title}>
+          {global.userState.stage}
+        </Text>
         <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
+          {this.renderStageButton("Application", this.progressEnums.application)}
+          {/* SPACER LINE */}
           <Block center>
-            <Button color="default" style={styles.button} onPress={() => navigation.navigate("Home")}>
-              DEFAULT
+            <Button
+              color="info"
+              style={{
+                width: 5,
+                height: 100
+              }}
+            >
+            </Button>
+          </Block>
+          {/* SPACER LINE END*/}
+          <Block center>
+            <Button
+              color={trainingColor}
+              textStyle={{ color: "black", fontSize: 12, fontWeight: "700" }}
+              style={styles.button}
+            >
+              Training
             </Button>
           </Block>
           {/* SPACER LINE */}
@@ -46,11 +102,11 @@ class ProgressBar extends React.Component {
           {/* SPACER LINE END*/}
           <Block center>
             <Button
-              color="secondary"
+              color={interviewColor}
               textStyle={{ color: "black", fontSize: 12, fontWeight: "700" }}
               style={styles.button}
             >
-              SECONDARY
+              Mock Interview
             </Button>
           </Block>
           {/* SPACER LINE */}
@@ -67,32 +123,11 @@ class ProgressBar extends React.Component {
           {/* SPACER LINE END*/}
           <Block center>
             <Button
-              color="secondary"
+              color={finalColor}
               textStyle={{ color: "black", fontSize: 12, fontWeight: "700" }}
               style={styles.button}
             >
-              SECONDARY
-            </Button>
-          </Block>
-          {/* SPACER LINE */}
-          <Block center>
-            <Button
-              color="info"
-              style={{
-                width: 5,
-                height: 100
-              }}
-            >
-            </Button>
-          </Block>
-          {/* SPACER LINE END*/}
-          <Block center>
-            <Button
-              color="secondary"
-              textStyle={{ color: "black", fontSize: 12, fontWeight: "700" }}
-              style={styles.button}
-            >
-              SECONDARY
+              Complete
             </Button>
           </Block>
         </Block>

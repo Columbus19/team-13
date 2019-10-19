@@ -191,9 +191,7 @@ const AppStack = createDrawerNavigator(
     TestProgressBar: {
       screen: TestProgressBarStack,
       navigationOptions: navOpt => ({
-        drawerLabel: ({ focused }) => (
-          <DrawerItem focused={focused} screen="TestProgressBar" title="TestProgressBar" />
-        )
+        drawerLabel: () => {}
       })
     },
     Articles: {

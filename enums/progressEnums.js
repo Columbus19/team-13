@@ -1,9 +1,9 @@
 class ProgressEnums {
     constructor () {
-        this.application = 0; 
-        this.training = 1; 
-        this.interview = 2; 
-        this.final = 3; 
+        this.application = "Home"; 
+        this.training = "Pro"; 
+        this.interview = "Onboarding"; 
+        this.final = "Profile"; 
     }
 }
 
