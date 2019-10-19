@@ -20,6 +20,9 @@ import TrainingHome from "../screens/TrainingHome";
 import TrainingVideo from "../screens/TrainingVideo";
 import ResumePage from "../screens/ResumePage";
 import ProgressBar from "../screens/ProgressBar";
+///
+import MockInterview from "../screens/MockInterview";
+import success from "../screens/success";
 // drawer
 import Menu from "./Menu";
 import DrawerItem from "../components/DrawerItem";
@@ -200,6 +203,33 @@ const LoginPageStack = createStackNavigator({
   transitionConfig
 });
 
+const MockInterviewStack = createStackNavigator({
+  MockInterview: {
+    screen: MockInterview,
+    navigationOptions: ({ navigation }) => ({
+      header: <Header title="Mock Interview" navigation={navigation} />
+    })
+  }
+},{
+  cardStyle: {
+    backgroundColor: "#F8F9FE"
+  },
+  transitionConfig
+});
+
+const successStack = createStackNavigator({
+  success: {
+    screen: success,
+    navigationOptions: ({ navigation }) => ({
+      header: <Header title="Success Page" navigation={navigation} />
+    })
+  }
+},{
+  cardStyle: {
+    backgroundColor: "#F8F9FE"
+  },
+  transitionConfig
+});
 // divideru se baga ca si cum ar fi un ecrna dar nu-i nimic duh
 const AppStack = createDrawerNavigator(
   {
@@ -278,7 +308,24 @@ const AppStack = createDrawerNavigator(
           <DrawerItem focused={focused} screen="Login" title="Login" />
         )
       })
+    },
+    MockInterview: {
+      screen: MockInterviewStack,
+      navigationOptions: navOpt => ({
+        drawerLabel: ({ focused }) => (
+          <DrawerItem focused={focused} screen="Mock Interview" title="Mock Interview" />
+        )
+      })
+    },
+    success: {
+      screen: successStack,
+      navigationOptions: navOpt => ({
+        drawerLabel: ({ focused }) => (
+          <DrawerItem focused={focused} screen="Success Page" title="Success Page" />
+        )
+      })
     }
+
   },
   Menu
 );
