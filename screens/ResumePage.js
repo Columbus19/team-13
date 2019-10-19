@@ -14,13 +14,13 @@ class ResumePage extends React.Component {
     super();
 
     this.state = {
-      showExpirence: false
+      showExperience: false
     };
   }
 
-  onHandleToggleExpirence = () => {
+  onHandleToggleExperience = () => {
     this.setState({
-      showExpirence: !this.state.showExpirence
+      showExperience: !this.state.showExperience
     });
   }
 
@@ -32,8 +32,8 @@ class ResumePage extends React.Component {
     navigation.navigate("ProgressBar");
   }
 
-  renderExpirence = () => {
-    if(this.state.showExpirence){
+  renderExperience = () => {
+    if(this.state.showExperience){
       return(
         <Block>
           <Text
@@ -804,10 +804,10 @@ class ResumePage extends React.Component {
             style={{ marginBottom: theme.SIZES.BASE / 2 , marginLeft: 15}}
             color={argonTheme.COLORS.DEFAULT}
           >
-            Do you have work expirence?
+            Do you have work experience?
         </Text>
-        <Button onPress={() => {this.onHandleToggleExpirence()}}>{!this.state.showExpirence ? "Yes" : "No"}</Button>
-        {this.renderExpirence()}
+        <Button onPress={() => {this.onHandleToggleExperience()}}>{!this.state.showExperience ? "Yes" : "No"}</Button>
+        {this.renderExperience()}
         </Block>
 
         {/*Activities and Awards Inputs*/}
@@ -981,22 +981,6 @@ class ResumePage extends React.Component {
       </ScrollView>
     );
   }
-}
-
-const styles = StyleSheet.create({
-  inputContainer: {
-    textAlign:"left",
-    color: "black",
-    marginLeft: 15,
-    marginBottom: 15,
-    marginRight: 15,
-    marginTop: 15,
-    borderColor: 'grey',
-    borderWidth: 2,
-    backgroundColor: 'white',
-    borderRadius: 5,
-    padding: 18
-  }
-});
+};
 
 export default ResumePage;

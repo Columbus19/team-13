@@ -1,14 +1,23 @@
-import React from "react";
+import React, { setGlobal } from "reactn";
 import { ScrollView, StyleSheet, Dimensions, TextInput, Image, View } from "react-native";
 // Galio components
 import { Block, Text, Button as GaButton, theme } from "galio-framework";
 // Argon themed components
 import { argonTheme, tabs } from "../constants";
 import { Button, Select, Icon, Input, Header, Switch } from "../components";
+import ProgressEnums from "../enums/progressEnums";
 
 const { width } = Dimensions.get("screen");
 
 class success extends React.Component {
+
+  onHandleSubmit = () => {
+    setGlobal({
+      userStage: new ProgressEnums().training,
+    });
+    const { navigation } = this.props;
+    navigation.navigate("ProgressBar");
+  }
 
   render(){
     return(
@@ -19,6 +28,15 @@ class success extends React.Component {
           source={{uri: 'https://raw.githubusercontent.com/mastermoo/rn-emoji-feedback/master/src/assets/smile_big.png'}}
         />
         </View>
+
+      <Block center style={{paddingBottom: 30, paddingTop: 50}}>
+        <Button color="success" 
+        style={{marginBottom: theme.SIZES.BASE, width: width - theme.SIZES.BASE * 2}}
+        onPress={() => {this.onHandleSubmit()}}>
+          Return to home!
+        </Button>
+      </Block>
+
       </ScrollView>
     );
   }
