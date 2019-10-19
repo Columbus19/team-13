@@ -29,18 +29,13 @@ class Register extends React.Component {
 
   render() {
     return (
-      <Block flex middle>
-        <StatusBar hidden />
+      <Block flex middle style={{height: 300}}>
         <ImageBackground
           source={Images.RegisterBackground}
           style={{ width, height, zIndex: 1 }}
         >
           <Block flex middle>
             <Block style={styles.registerContainer}>
-              <Block flex={0.25} middle style={styles.socialConnect}>
-                <Block row style={{ marginTop: theme.SIZES.BASE }}>
-                </Block>
-              </Block>
               <Block flex>
                 <Block flex={0.17} middle>
                   <Text color="#8898AA" size={30}>

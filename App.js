@@ -6,7 +6,6 @@ import { Block, GalioProvider } from 'galio-framework';
 
 import Screens from './navigation/Screens';
 import { Images, articles, argonTheme } from './constants';
-import ProgressEnums from './enums/progressEnums'
 
 // cache app images
 const assetImages = [

@@ -27,24 +27,22 @@ class Onboarding extends React.Component {
           />
         </Block>
         <Block center>
-          <Image source={Images.LogoOnboarding} style={styles.logo} />
+          <Image style={{width: 300, height: 100}} source={Images.LogoOnboarding} style={styles.logo} />
+          {/* <Image
+          source={require('../assets/imgs/logo.png')} />*/}
+        
         </Block>
         <Block flex space="between" style={styles.padded}>
             <Block flex space="around" style={{ zIndex: 2 }}>
               <Block style={styles.title}>
                 <Block>
                   <Text color="white" size={60}>
-                    Design
-                  </Text>
-                </Block>
-                <Block>
-                  <Text color="white" size={60}>
-                    System
+                    Tomorrow's Leaders Today
                   </Text>
                 </Block>
                 <Block style={styles.subTitle}>
                   <Text color="white" size={16}>
-                    Fully coded React Native components.
+                    The network you need to go where you want.
                   </Text>
                 </Block>
               </Block>
@@ -82,11 +80,11 @@ const styles = StyleSheet.create({
     shadowOpacity: 0
   },
   logo: {
-    width: 200,
-    height: 60,
+    width: 675,
+    height: 202.5,
     zIndex: 2,
     position: 'relative',
-    marginTop: '-50%'
+    marginTop: '-75%'
   },
   title: {
     marginTop:'-5%'
