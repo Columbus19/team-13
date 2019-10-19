@@ -1,4 +1,4 @@
-import React from "react";
+import React, { setGlobal } from "reactn";
 import {
   ImageBackground,
   Image,
@@ -52,7 +52,7 @@ class Onboarding extends React.Component {
                 <Button
                   style={styles.button}
                   color={argonTheme.COLORS.SECONDARY}
-                  onPress={() => navigation.navigate("Home")}
+                  onPress={() => navigation.navigate("Login")}
                   textStyle={{ color: argonTheme.COLORS.BLACK }}
                 >
                   Get Started

@@ -1,5 +1,6 @@
 import React from "react";
-import { ScrollView, StyleSheet, Dimensions, CheckBox, TextInput } from "react-native";
+import { ScrollView, StyleSheet, Dimensions, View, TextInput } from "react-native";
+import { CheckBox } from "react-native-elements";
 // Galio components
 import { Block, Text, Button as GaButton, theme } from "galio-framework";
 // Argon themed components
@@ -9,25 +10,36 @@ import { Button, Select, Icon, Input, Header, Switch } from "../components";
 const { width } = Dimensions.get("screen");
 
 class Assessment extends React.Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+        Option1: false,
+        Option2: false,
+        Option3: false,
+        Option4: false
+    }
+  }
+
   //displays questions
   QuestionNumber = (question) => {
     return (<Text
-            h2
-          style={{ marginBottom: theme.SIZES.BASE / 2, textAlign: "center", textDecorationLine: "underline",paddingTop: 20}}
+            h4
+          style={{ marginBottom: theme.SIZES.BASE / 2, textAlign: "center",paddingTop: 20}}
             color={argonTheme.COLORS.DEFAULT}>
         "{question}"
         </Text>);
   }
 
   //displays buttons and options 
-  ButtonOptions = (Option) => {
+  ButtonOptions = (Option,OptionNum) => {
     return (
       <CheckBox
         center
         title= {Option}
-        checkedIcon='dot-circle-o'
-        uncheckedIcon='circle-o'
-        checked={this.state.checked}
+        style={styles.checkboxes}
+        clicked = {this.state.OptionNum}
+        onPress={() => this.setState({checked: !this.state.clicked})}
       />
     );
   }
@@ -42,66 +54,55 @@ class Assessment extends React.Component {
         Check Your Learning!
         </Text>
 
+        {this.QuestionNumber("Question")}
 
-        {this.QuestionNumber("Question 1")}
-        {this.ButtonOptions("Option 1")}
-        {this.ButtonOptions("Option 2")}
-        {this.ButtonOptions("Option 3")}
-        {this.ButtonOptions("Option 4")}
-        {this.ButtonOptions("Option 5")}
 
-        <View style={styles.spacing}/>
+        
+        <CheckBox
+          title = 'Option 1'
+          checkedIcon = 'dot-circle-o'
+          uncheckedIcon = 'circle-o'
+          checked = {this.state.Option1}
+          onPress={() => this.setState({Option1: !this.state.Option1})}
+        />
 
-        {this.QuestionNumber("Question 2")}
-        {this.ButtonOptions("Option 1")}
-        {this.ButtonOptions("Option 2")}
-        {this.ButtonOptions("Option 3")}
-        {this.ButtonOptions("Option 4")}
-        {this.ButtonOptions("Option 5")}
+        <CheckBox
+          title = 'Option 2'
+          checkedIcon = 'dot-circle-o'
+          uncheckedIcon = 'circle-o'
+          checked = {this.state.Option2}
+          onPress={() => this.setState({Option2: !this.state.Option2})}
+        />
 
-        <View style={styles.spacing}/>
+        <CheckBox
+          title = 'Option 3'
+          checkedIcon = 'dot-circle-o'
+          uncheckedIcon = 'circle-o'
+          checked = {this.state.Option3}
+          onPress={() => this.setState({Option3: !this.state.Option3})}
+        />
 
-        {this.QuestionNumber("Question 3")}
-        {this.ButtonOptions("Option 1")}
-        {this.ButtonOptions("Option 2")}
-        {this.ButtonOptions("Option 3")}
-        {this.ButtonOptions("Option 4")}
-        {this.ButtonOptions("Option 5")}
+        <CheckBox
+          title = 'Option 4'
+          checkedIcon = 'dot-circle-o'
+          uncheckedIcon = 'circle-o'
+          checked = {this.state.Option4}
+          onPress={() => this.setState({Option4: !this.state.Option4})}
+        />
+         
 
-        <View style={styles.spacing}/>
-
-        {this.QuestionNumber("Question 4")}
-        {this.ButtonOptions("Option 1")}
-        {this.ButtonOptions("Option 2")}
-        {this.ButtonOptions("Option 3")}
-        {this.ButtonOptions("Option 4")}
-        {this.ButtonOptions("Option 5")}
-
-        <View style={styles.spacing}/>
-
-        {this.QuestionNumber("Question 5")}
-        {this.ButtonOptions("Option 1")}
-        {this.ButtonOptions("Option 2")}
-        {this.ButtonOptions("Option 3")}
-        {this.ButtonOptions("Option 4")}
-        {this.ButtonOptions("Option 5")}
-
-        <View style={styles.spacing}/>
-
-        {this.QuestionNumber("Question 6")}
-        {this.ButtonOptions("Option 1")}
-        {this.ButtonOptions("Option 2")}
-        {this.ButtonOptions("Option 3")}
-        {this.ButtonOptions("Option 4")}
-        {this.ButtonOptions("Option 5")}
+        {/* {this.ButtonOptions("Option 1",this.state.Option1)}
+        {this.ButtonOptions("Option 2","Option2")}
+        {this.ButtonOptions("Option 3","Option3")}
+        {this.ButtonOptions("Option 4","Option4")} */}
 
         <Block center style={{paddingBottom: 30, paddingTop: 50}}>
-            <Button color="success" style={{marginBottom: theme.SIZES.BASE, width: width - theme.SIZES.BASE * 2}}>
-              Submit!
+            <Button color="success" 
+            style={{marginBottom: theme.SIZES.BASE, width: width - theme.SIZES.BASE * 2}}
+            onPress={() => {this.onHandleSubmit()}}>
+              Submit
             </Button>
         </Block>
-
-        />
       </ScrollView>
     );
   }
@@ -110,6 +111,11 @@ class Assessment extends React.Component {
 const styles = StyleSheet.create({
   spacing: {
     margin:20
+  },
+  checkboxes: {
+    margin:20,
+    height:50,
+    width:50
   }
 });
 

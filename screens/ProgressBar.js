@@ -1,4 +1,4 @@
-import React from "react";
+import React, { setGlobal, useGlobal  } from "reactn";
 import { ScrollView, StyleSheet, Dimensions, TouchableOpacity } from "react-native";
 // Galio components
 import { Block, Text, Button as GaButton, theme } from "galio-framework";
@@ -19,7 +19,7 @@ class ProgressBar extends React.Component {
     var selectedButtonColor = "default";
     var unselectedButtonColor = "secondary";
 
-    const isSelected = global.userState.stage == pageToNav;
+    const isSelected = this.global.userStage == pageToNav;
 
     if(isSelected){
       return(
@@ -49,14 +49,6 @@ class ProgressBar extends React.Component {
   }
 
   renderButtons = () => {
-    var selectedButton = "default";
-    var unselectedButton = "secondary";
-
-    const applicationColor = this.props.stage === this.progressEnums.application ? selectedButton : unselectedButton;
-    const trainingColor = this.props.stage === this.progressEnums.training ? selectedButton : unselectedButton;
-    const interviewColor = this.props.stage === this.progressEnums.interview ? selectedButton : unselectedButton;
-    const finalColor = this.props.stage === this.progressEnums.final ? selectedButton : unselectedButton;
-
     return (
       <Block flex>
         <Text bold size={16} style={styles.title}>

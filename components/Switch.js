@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { setGlobal } from "reactn";
 import { Switch, Platform } from 'react-native';
 
 import argonTheme from '../constants/Theme';

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { setGlobal } from "reactn";
 import { withNavigation } from 'react-navigation';
 import { TouchableOpacity, StyleSheet, Platform, Dimensions } from 'react-native';
 import { Button, Block, NavBar, Text, theme } from 'galio-framework';

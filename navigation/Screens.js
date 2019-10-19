@@ -1,4 +1,4 @@
-import React from "react";
+import React, { setGlobal } from "reactn";
 import { Easing, Animated } from "react-native";
 import {
   createStackNavigator,
@@ -16,6 +16,8 @@ import Profile from "../screens/Profile";
 import Register from "../screens/Register";
 import Elements from "../screens/Elements";
 import Articles from "../screens/Articles";
+import TrainingHome from "../screens/TrainingHome";
+import TrainingVideo from "../screens/TrainingVideo";
 import ResumePage from "../screens/ResumePage";
 import ProgressBar from "../screens/ProgressBar";
 import Assessment from "../screens/WebinarAssessment";
@@ -150,11 +152,60 @@ const HomeStack = createStackNavigator(
   }
 );
 
+const TrainingStack = createStackNavigator({
+  TrainingHome: {
+    screen: TrainingHome,
+    navigationOptions: ({ navigation }) => ({
+      header: <Header title="Training" navigation={navigation} />
+    })
+  },
+  TrainingVideo: {
+    screen: TrainingVideo,
+    navigationOptions: ({ navigation }) => ({
+      header: <Header title="Training" navigation={navigation} />
+    })
+  }
+},{
+  cardStyle: {
+    backgroundColor: "#F8F9FE"
+  },
+  transitionConfig
+});
+      
+
 const ResumePageStack = createStackNavigator({
   Articles: {
     screen: ResumePage,
     navigationOptions: ({ navigation }) => ({
       header: <Header title="Application" navigation={navigation} />
+    })
+  }
+},{
+  cardStyle: {
+    backgroundColor: "#F8F9FE"
+  },
+  transitionConfig
+});
+
+const WebinarAssessmentPageStack = createStackNavigator({
+  Articles: {
+    screen: Assessment,
+    navigationOptions: ({ navigation }) => ({
+      header: <Header title="Webinar Assessment" navigation={navigation} />
+    })
+  }
+},{
+  cardStyle: {
+    backgroundColor: "#F8F9FE"
+  },
+  transitionConfig
+});
+
+const LoginPageStack = createStackNavigator({
+  Articles: {
+    screen: Register,
+    navigationOptions: ({ navigation }) => ({
+      header: <Header title="Login" navigation={navigation} />
     })
   }
 },{
@@ -219,11 +270,35 @@ const AppStack = createDrawerNavigator(
         )
       })
     },
+    Training: {
+      screen: TrainingStack,
+      navigationOptions: navOpt => ({
+        drawerLabel: ({ focused }) => (
+          <DrawerItem focused={focused} screen="Training" title="Training" />
+        )
+      })
+    },
     ResumePage: {
       screen: ResumePageStack,
       navigationOptions: navOpt => ({
         drawerLabel: ({ focused }) => (
           <DrawerItem focused={focused} screen="Application" title="Application" />
+        )
+      })
+    },
+    Assessment: {
+      screen: WebinarAssessmentPageStack,
+      navigationOptions: navOpt => ({
+        drawerLabel: ({ focused }) => (
+          <DrawerItem focused={focused} screen="Quick learning check" title="Quick learning check" />
+        )
+      })
+    },
+    Login: {
+      screen: LoginPageStack,
+      navigationOptions: navOpt => ({
+        drawerLabel: ({ focused }) => (
+          <DrawerItem focused={focused} screen="Login" title="Login" />
         )
       })
     }

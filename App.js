@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { setGlobal } from "reactn";
 import { Image } from 'react-native';
 import { AppLoading } from 'expo';
 import { Asset } from 'expo-asset';
 import { Block, GalioProvider } from 'galio-framework';
-import './states/UserState.js';
 
 import Screens from './navigation/Screens';
 import { Images, articles, argonTheme } from './constants';
@@ -36,7 +35,6 @@ function cacheImages(images) {
 export default class App extends React.Component {
   constructor(){
     super();
-    global.userState.advanceToNextStage();
   }
 
   state = {
