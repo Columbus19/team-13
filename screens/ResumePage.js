@@ -13,7 +13,7 @@ class ResumePage extends React.Component {
     return(
       <ScrollView>
         <Text style={{fontSize:96}}>Resumé Details</Text>
-        
+        <TextInput style={styles.inputContainer}></TextInput>
       </ScrollView>
     );
   }
@@ -21,7 +21,9 @@ class ResumePage extends React.Component {
 const styles = StyleSheet.create({
   inputContainer: {
     padding: 100,
-    marginBottom: 200
+    marginTop: 200,
+    borderColor: "black",
+    borderWidth: 1
   },
   input: {
     height: 40,
