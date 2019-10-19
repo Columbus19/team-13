@@ -46,7 +46,7 @@ class TrainingHome extends React.Component {
               onPress={() => navigation.navigate("TrainingVideo")}
               textStyle={styles.buttonText}
               >
-              What to expect in an internship...
+              Preparing for an internship
             </Button>
             <Button
               style={styles.button}
