@@ -17,6 +17,8 @@ import Register from "../screens/Register";
 import Elements from "../screens/Elements";
 import Articles from "../screens/Articles";
 import ResumePage from "../screens/ResumePage";
+///
+import MockInterview from "../screens/MockInterview";
 // drawer
 import Menu from "./Menu";
 import DrawerItem from "../components/DrawerItem";
@@ -148,6 +150,20 @@ const ResumePageStack = createStackNavigator({
   transitionConfig
 });
 
+const MockInterviewStack = createStackNavigator({
+  MockInterview: {
+    screen: MockInterview,
+    navigationOptions: ({ navigation }) => ({
+      header: <Header title="Mock Interview" navigation={navigation} />
+    })
+  }
+},{
+  cardStyle: {
+    backgroundColor: "#F8F9FE"
+  },
+  transitionConfig
+});
+
 // divideru se baga ca si cum ar fi un ecrna dar nu-i nimic duh
 const AppStack = createDrawerNavigator(
   {
@@ -204,7 +220,16 @@ const AppStack = createDrawerNavigator(
           <DrawerItem focused={focused} screen="Application" title="Application" />
         )
       })
+    },
+    MockInterview: {
+      screen: MockInterviewStack,
+      navigationOptions: navOpt => ({
+        drawerLabel: ({ focused }) => (
+          <DrawerItem focused={focused} screen="Mock Interview" title="Mock Interview" />
+        )
+      })
     }
+
   },
   Menu
 );
