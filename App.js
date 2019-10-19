@@ -36,7 +36,7 @@ function cacheImages(images) {
 export default class App extends React.Component {
   constructor(){
     super();
-    global.userState.advanceToNextStage();
+    global.userState.advanceToApplication();
   }
 
   state = {

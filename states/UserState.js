@@ -3,16 +3,18 @@ import ProgressEnums from '../enums/progressEnums';
 global.userState = {};
 global.userState.stage = null;
 
-global.userState.advanceToNextStage = function() {
-    var progressEnums = new ProgressEnums();
+global.userState.advanceToApplication = function() {
+    global.userState.stage = new ProgressEnums().application;
+};
 
-    if(global.userState.stage == null){
-        global.userState.stage = progressEnums.application;
-    } else if(global.userState.stage == progressEnums.application){
-        global.userState.stage = progressEnums.training;
-    } else if(global.userState.stage == progressEnums.training){
-        global.userState.stage = progressEnums.interview;
-    } else if(global.userState.stage == progressEnums.interview){
-        global.userState.stage = progressEnums.final;
-    }
+global.userState.advanceToTraining = function() {
+    global.userState.stage = new ProgressEnums().training;
+};
+
+global.userState.advanceToInterview = function() {
+    global.userState.stage = new ProgressEnums().interview;
+};
+
+global.userState.advanceToFinal = function() {
+    global.userState.stage = new ProgressEnums().final;
 };
