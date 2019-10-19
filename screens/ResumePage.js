@@ -10,7 +10,6 @@ import ProgressEnums from "../enums/progressEnums";
 const { width } = Dimensions.get("screen");
 
 class ResumePage extends React.Component {
-
   onHandleSubmit = () => {
     setGlobal({
       userStage: new ProgressEnums().training,
