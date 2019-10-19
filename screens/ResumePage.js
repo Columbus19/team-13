@@ -8,12 +8,10 @@ import { Button, Select, Icon, Input, Header, Switch } from "../components";
 
 import ProgressEnums from "../enums/progressEnums";
 const { width } = Dimensions.get("screen");
-import {advanceToTraining} from '../states/UserState.js';
 
 class ResumePage extends React.Component {
 
   onHandleSubmit = () => {
-    advanceToTraining();
     const { navigation } = this.props;
     navigation.navigate("ProgressBar");
   }
