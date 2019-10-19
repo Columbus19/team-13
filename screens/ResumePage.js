@@ -12,23 +12,27 @@ class ResumePage extends React.Component {
   render(){
     return(
       <ScrollView>
-        <Text style={{fontSize:96}}>Resumé Details</Text>
+        <Text style={{fontSize:24}}>Application Details</Text>
+        <TextInput style={styles.inputContainer}></TextInput>
+        <TextInput style={styles.inputContainer}></TextInput>
+        <TextInput style={styles.inputContainer}></TextInput>
         <TextInput style={styles.inputContainer}></TextInput>
       </ScrollView>
     );
   }
 }
+
 const styles = StyleSheet.create({
   inputContainer: {
     padding: 100,
-    marginTop: 200,
+    margin: 50,
     borderColor: "black",
-    borderWidth: 1
+    borderWidth: 1,
+    backgroundColor: 'blue'
   },
   input: {
     height: 40,
-    backgroundColor: 'white',
-    marginBottom: 20
+    marginBottom: 20,
   }
 });
 
