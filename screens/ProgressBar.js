@@ -5,10 +5,12 @@ import { Block, Text, Button as GaButton, theme } from "galio-framework";
 // Argon themed components
 import { argonTheme, tabs } from "../constants/";
 import { Button, Select, Icon, Input, Header, Switch } from "../components/";
+import { ProgressEnums} from "../enums/progressEnums";
 
 const { width } = Dimensions.get("screen");
 
 class ProgressBar extends React.Component {
+
   state = {
     "switch-1": true,
     "switch-2": false
@@ -18,6 +20,7 @@ class ProgressBar extends React.Component {
     this.setState({ [switchId]: !this.state[switchId] });
 
   renderButtons = () => {
+    const { navigation } = this.props;
     return (
       <Block flex>
         <Text bold size={16} style={styles.title}>
@@ -25,7 +28,7 @@ class ProgressBar extends React.Component {
         </Text>
         <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
           <Block center>
-            <Button color="default" style={styles.button}>
+            <Button color="default" style={styles.button} onPress={() => navigation.navigate("Home")}>
               DEFAULT
             </Button>
           </Block>
