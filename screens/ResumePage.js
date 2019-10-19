@@ -10,6 +10,20 @@ import ProgressEnums from "../enums/progressEnums";
 const { width } = Dimensions.get("screen");
 
 class ResumePage extends React.Component {
+  constructor(){
+    super();
+
+    this.state = {
+      showExpirence: false
+    };
+  }
+
+  onHandleToggleExpirence = () => {
+    this.setState({
+      showExpirence: !this.state.showExpirence
+    });
+  }
+
   onHandleSubmit = () => {
     setGlobal({
       userStage: new ProgressEnums().training,
@@ -18,205 +32,11 @@ class ResumePage extends React.Component {
     navigation.navigate("ProgressBar");
   }
 
-  render(){
-    return(
-      <ScrollView>
-        <Text
-            h1
-            style={{ marginBottom: theme.SIZES.BASE / 2 , textAlign:"center"}}
-            color={argonTheme.COLORS.DEFAULT}>
-        Application Details
-        </Text>
-        
-        <Text
-            h2
-          style={{ marginBottom: theme.SIZES.BASE / 2, textAlign: "center", textDecorationLine: "underline",paddingTop: 20}}
-            color={argonTheme.COLORS.DEFAULT}>
-        General Information
-        </Text>
-
-        {/*inputs for basic info*/}
-        <Text
-            h5
-            style={{ marginBottom: theme.SIZES.BASE / 2 , marginLeft: 15}}
-            color={argonTheme.COLORS.DEFAULT}
-          >
-            First Name
-        </Text>
-        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
-          <Input right placeholder="ex. John" iconContent={<Block />} />
-        </Block>
-
-        <Text
-            h5
-            style={{ marginBottom: theme.SIZES.BASE / 2 , marginLeft: 15}}
-            color={argonTheme.COLORS.DEFAULT}
-          >
-            Last Name
-        </Text>
-        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
-          <Input right placeholder="ex. Smith" iconContent={<Block />} />
-        </Block>
-
-        <Text
-            h5
-            style={{ marginBottom: theme.SIZES.BASE / 2 , marginLeft: 15}}
-            color={argonTheme.COLORS.DEFAULT}
-          >
-            Email Address
-        </Text>
-        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
-          <Input right placeholder="ex. hi@example.com" iconContent={<Block />} />
-        </Block>
-
-        <Text
-            h5
-            style={{ marginBottom: theme.SIZES.BASE / 2 , marginLeft: 15}}
-            color={argonTheme.COLORS.DEFAULT}
-          >
-            Phone Number
-        </Text>
-        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
-          <Input right placeholder="ex. 888-888-8888" iconContent={<Block />} />
-        </Block>
-
-        <Text
-            h5
-            style={{ marginBottom: theme.SIZES.BASE / 2 , marginLeft: 15}}
-            color={argonTheme.COLORS.DEFAULT}
-          >
-            Current Address
-        </Text>
-        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
-          <Input multiline={true} scroll={true} right placeholder="Enter current address here" iconContent={<Block />} />
-        </Block>
-        
-        <Text
-            h5
-            style={{ marginBottom: theme.SIZES.BASE / 2 , marginLeft: 15}}
-            color={argonTheme.COLORS.DEFAULT}
-          >
-            Permanent Address
-        </Text>
-        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
-          <Input multiline={true} scroll={true} right placeholder="Enter permanent address here" iconContent={<Block />} />
-        </Block>
-
-        {/*Start of resumé specifics*/}
-        <Text
-            h2
-            style={{ marginBottom: theme.SIZES.BASE / 2 , textAlign:"center", textDecorationLine:"underline", paddingTop: 20}}
-            color={argonTheme.COLORS.DEFAULT}>
-        Resume Specifics
-        </Text>
-
-        <Text
-            h5
-            style={{ marginBottom: theme.SIZES.BASE / 2 , marginLeft: 15}}
-            color={argonTheme.COLORS.DEFAULT}
-          >
-            Objective Statement
-        </Text>
-        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
-          <Input multiline={true} scroll={true} right placeholder="Enter Objective Statement" iconContent={<Block />} />
-        </Block>
-
-        <Text
-          h4
-          style={{ marginBottom: theme.SIZES.BASE / 2, textAlign: "left", textDecorationLine: "underline", paddingTop: 10 }}
-          color={argonTheme.COLORS.DEFAULT}>
-          Education
-        </Text>
-
-        <Text
-            h5
-            style={{ marginBottom: theme.SIZES.BASE / 2 , marginLeft: 15}}
-            color={argonTheme.COLORS.DEFAULT}
-          >
-            School
-        </Text>
-        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
-          <Input multiline={true} scroll={true} right placeholder="ex. Ohio State University" iconContent={<Block />} />
-        </Block>
-
-        <Text
-            h5
-            style={{ marginBottom: theme.SIZES.BASE / 2 , marginLeft: 15}}
-            color={argonTheme.COLORS.DEFAULT}
-          >
-            Location of School
-        </Text>
-        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
-          <Input multiline={true} scroll={true} right placeholder="ex. Columbus, Ohio" iconContent={<Block />} />
-        </Block>
-
-        <Text
-            h5
-            style={{ marginBottom: theme.SIZES.BASE / 2 , marginLeft: 15}}
-            color={argonTheme.COLORS.DEFAULT}
-          >
-            Field of Study (Major)
-        </Text>
-        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
-          <Input multiline={true} scroll={true} right placeholder="ex. Computer Science" iconContent={<Block />} />
-        </Block>
-
-        <Text
-            h5
-            style={{ marginBottom: theme.SIZES.BASE / 2 , marginLeft: 15}}
-            color={argonTheme.COLORS.DEFAULT}
-          >
-            Field of Study (Minor(s), comma separated)
-        </Text>
-        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
-          <Input multiline={true} scroll={true} right placeholder="ex. Mathematics" iconContent={<Block />} />
-        </Block>
-
-        <Text
-            h5
-            style={{ marginBottom: theme.SIZES.BASE / 2 , marginLeft: 15}}
-            color={argonTheme.COLORS.DEFAULT}
-          >
-            Current Overall GPA
-        </Text>
-        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
-          <Input multiline={true} scroll={true} right placeholder="ex. 3.47" iconContent={<Block />} />
-        </Block>
-
-        <Text
-            h5
-            style={{ marginBottom: theme.SIZES.BASE / 2 , marginLeft: 15}}
-            color={argonTheme.COLORS.DEFAULT}
-          >
-            Expected Graduation Month and Year
-        </Text>
-        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
-          <Input multiline={true} scroll={true} right placeholder="ex. May 2021" iconContent={<Block />} />
-        </Block>
-
-        <Text
-            h5
-            style={{ marginBottom: theme.SIZES.BASE / 2 , marginLeft: 15}}
-            color={argonTheme.COLORS.DEFAULT}
-          >
-            Relevant Coursework (comma separated)
-        </Text>
-        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
-          <Input multiline={true} scroll={true} right placeholder="ex. Data Structures and Algorithms, Linear Algebra, ..." iconContent={<Block />} />
-        </Block>
-
-        <Text
-            h5
-            style={{ marginBottom: theme.SIZES.BASE / 2 , marginLeft: 15}}
-            color={argonTheme.COLORS.DEFAULT}
-          >
-            Technical/Non-Technical Skills (comma separated)
-        </Text>
-        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
-          <Input multiline={true} scroll={true} right placeholder="ex. Microsoft Office Suite, Bilingual in English and Hindi, ..." iconContent={<Block />} />
-        </Block>
-
-        <Text
+  renderExpirence = () => {
+    if(this.state.showExpirence){
+      return(
+        <Block>
+          <Text
             h2
             style={{ marginBottom: theme.SIZES.BASE / 2 , textAlign:"center", textDecorationLine:"underline", paddingTop: 20}}
             color={argonTheme.COLORS.DEFAULT}>
@@ -771,6 +591,224 @@ class ResumePage extends React.Component {
         </Text>
         <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
           <Input multiline={true} scroll={true} right placeholder="Enter description here" iconContent={<Block />} />
+        </Block>
+
+        </Block>
+      );
+    }
+  }
+
+  render(){
+    return(
+      <ScrollView style={{padding: 20}}>
+        <Text
+            h1
+            style={{ marginBottom: theme.SIZES.BASE / 2 , textAlign:"center"}}
+            color={argonTheme.COLORS.DEFAULT}>
+        Application Details
+        </Text>
+        
+        <Text
+            h2
+          style={{ marginBottom: theme.SIZES.BASE / 2, textAlign: "center", textDecorationLine: "underline",paddingTop: 20}}
+            color={argonTheme.COLORS.DEFAULT}>
+        General Information
+        </Text>
+
+        {/*inputs for basic info*/}
+        <Text
+            h5
+            style={{ marginBottom: theme.SIZES.BASE / 2 , marginLeft: 15}}
+            color={argonTheme.COLORS.DEFAULT}
+          >
+            First Name
+        </Text>
+        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
+          <Input right placeholder="ex. John" iconContent={<Block />} />
+        </Block>
+
+        <Text
+            h5
+            style={{ marginBottom: theme.SIZES.BASE / 2 , marginLeft: 15}}
+            color={argonTheme.COLORS.DEFAULT}
+          >
+            Last Name
+        </Text>
+        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
+          <Input right placeholder="ex. Smith" iconContent={<Block />} />
+        </Block>
+
+        <Text
+            h5
+            style={{ marginBottom: theme.SIZES.BASE / 2 , marginLeft: 15}}
+            color={argonTheme.COLORS.DEFAULT}
+          >
+            Email Address
+        </Text>
+        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
+          <Input right placeholder="ex. hi@example.com" iconContent={<Block />} />
+        </Block>
+
+        <Text
+            h5
+            style={{ marginBottom: theme.SIZES.BASE / 2 , marginLeft: 15}}
+            color={argonTheme.COLORS.DEFAULT}
+          >
+            Phone Number
+        </Text>
+        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
+          <Input right placeholder="ex. 888-888-8888" iconContent={<Block />} />
+        </Block>
+
+        <Text
+            h5
+            style={{ marginBottom: theme.SIZES.BASE / 2 , marginLeft: 15}}
+            color={argonTheme.COLORS.DEFAULT}
+          >
+            Current Address
+        </Text>
+        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
+          <Input multiline={true} scroll={true} right placeholder="Enter current address here" iconContent={<Block />} />
+        </Block>
+        
+        <Text
+            h5
+            style={{ marginBottom: theme.SIZES.BASE / 2 , marginLeft: 15}}
+            color={argonTheme.COLORS.DEFAULT}
+          >
+            Permanent Address
+        </Text>
+        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
+          <Input multiline={true} scroll={true} right placeholder="Enter permanent address here" iconContent={<Block />} />
+        </Block>
+
+        {/*Start of resumé specifics*/}
+        <Text
+            h2
+            style={{ marginBottom: theme.SIZES.BASE / 2 , textAlign:"center", textDecorationLine:"underline", paddingTop: 20}}
+            color={argonTheme.COLORS.DEFAULT}>
+        Resume Specifics
+        </Text>
+
+        <Text
+            h5
+            style={{ marginBottom: theme.SIZES.BASE / 2 , marginLeft: 15}}
+            color={argonTheme.COLORS.DEFAULT}
+          >
+            Objective Statement
+        </Text>
+        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
+          <Input multiline={true} scroll={true} right placeholder="Enter Objective Statement" iconContent={<Block />} />
+        </Block>
+
+        <Text
+          h4
+          style={{ marginBottom: theme.SIZES.BASE / 2, textAlign: "left", textDecorationLine: "underline", paddingTop: 10 }}
+          color={argonTheme.COLORS.DEFAULT}>
+          Education
+        </Text>
+
+        <Text
+            h5
+            style={{ marginBottom: theme.SIZES.BASE / 2 , marginLeft: 15}}
+            color={argonTheme.COLORS.DEFAULT}
+          >
+            School
+        </Text>
+        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
+          <Input multiline={true} scroll={true} right placeholder="ex. Ohio State University" iconContent={<Block />} />
+        </Block>
+
+        <Text
+            h5
+            style={{ marginBottom: theme.SIZES.BASE / 2 , marginLeft: 15}}
+            color={argonTheme.COLORS.DEFAULT}
+          >
+            Location of School
+        </Text>
+        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
+          <Input multiline={true} scroll={true} right placeholder="ex. Columbus, Ohio" iconContent={<Block />} />
+        </Block>
+
+        <Text
+            h5
+            style={{ marginBottom: theme.SIZES.BASE / 2 , marginLeft: 15}}
+            color={argonTheme.COLORS.DEFAULT}
+          >
+            Field of Study (Major)
+        </Text>
+        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
+          <Input multiline={true} scroll={true} right placeholder="ex. Computer Science" iconContent={<Block />} />
+        </Block>
+
+        <Text
+            h5
+            style={{ marginBottom: theme.SIZES.BASE / 2 , marginLeft: 15}}
+            color={argonTheme.COLORS.DEFAULT}
+          >
+            Field of Study (Minor(s), comma separated)
+        </Text>
+        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
+          <Input multiline={true} scroll={true} right placeholder="ex. Mathematics" iconContent={<Block />} />
+        </Block>
+
+        <Text
+            h5
+            style={{ marginBottom: theme.SIZES.BASE / 2 , marginLeft: 15}}
+            color={argonTheme.COLORS.DEFAULT}
+          >
+            Current Overall GPA
+        </Text>
+        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
+          <Input multiline={true} scroll={true} right placeholder="ex. 3.47" iconContent={<Block />} />
+        </Block>
+
+        <Text
+            h5
+            style={{ marginBottom: theme.SIZES.BASE / 2 , marginLeft: 15}}
+            color={argonTheme.COLORS.DEFAULT}
+          >
+            Expected Graduation Month and Year
+        </Text>
+        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
+          <Input multiline={true} scroll={true} right placeholder="ex. May 2021" iconContent={<Block />} />
+        </Block>
+
+        <Text
+            h5
+            style={{ marginBottom: theme.SIZES.BASE / 2 , marginLeft: 15}}
+            color={argonTheme.COLORS.DEFAULT}
+          >
+            Relevant Coursework (comma separated)
+        </Text>
+        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
+          <Input multiline={true} scroll={true} right placeholder="ex. Data Structures and Algorithms, Linear Algebra, ..." iconContent={<Block />} />
+        </Block>
+
+        <Text
+            h5
+            style={{ marginBottom: theme.SIZES.BASE / 2 , marginLeft: 15}}
+            color={argonTheme.COLORS.DEFAULT}
+          >
+            Technical/Non-Technical Skills (comma separated)
+        </Text>
+        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
+          <Input multiline={true} scroll={true} right placeholder="ex. Microsoft Office Suite, Bilingual in English and Hindi, ..." iconContent={<Block />} />
+        </Block>
+
+
+
+        <Block style={{marginTop: 20, marginBottom: 60}}>
+        <Text
+            h5
+            style={{marginTop: 40}}
+            style={{ marginBottom: theme.SIZES.BASE / 2 , marginLeft: 15}}
+            color={argonTheme.COLORS.DEFAULT}
+          >
+            Do you have work expirence?
+        </Text>
+        <Button onPress={() => {this.onHandleToggleExpirence()}}>{!this.state.showExpirence ? "Yes" : "No"}</Button>
+        {this.renderExpirence()}
         </Block>
 
         {/*Activities and Awards Inputs*/}
