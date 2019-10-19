@@ -198,10 +198,10 @@ const AppStack = createDrawerNavigator(
       })
     },
     TrainingHome: {
-      screen: TrainingHome,
+      screen: TrainingHomeStack,
       navigationOptions: navOpt => ({
         drawerLabel: ({ focused }) => (
-          <DrawerItem focused={focused} screen="Articles" title="Articles" />
+          <DrawerItem focused={focused} screen="Training" title="Training" />
         )
       })
     }
