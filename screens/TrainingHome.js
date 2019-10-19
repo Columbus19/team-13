@@ -42,7 +42,7 @@ class TrainingHome extends React.Component {
           <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
             <Button
               style={styles.button}
-              color={argonTheme.COLORS.PRIMARY}
+              color="default"
               onPress={() => navigation.navigate("TrainingVideo")}
               textStyle={styles.buttonText}
               >
@@ -50,7 +50,7 @@ class TrainingHome extends React.Component {
             </Button>
             <Button
               style={styles.button}
-              color={argonTheme.COLORS.PRIMARY}
+              color="default"
               onPress={() => navigation.navigate("TrainingVideo")}
               textStyle={styles.buttonText}
               >
@@ -58,14 +58,14 @@ class TrainingHome extends React.Component {
             </Button>
             <Button
               style={styles.button}
-              color={argonTheme.COLORS.PRIMARY}
+              color="default"
               onPress={() => navigation.navigate("TrainingVideo")}
               textStyle={styles.buttonText}
               >
               Interviewing skills
             </Button>
             <Button
-              color={argonTheme.COLORS.PRIMARY}
+              color="default"
               onPress={() => this.onHandleGoToInterview()}
               textStyle={styles.buttonText}
               >

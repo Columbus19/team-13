@@ -103,8 +103,9 @@ class Register extends React.Component {
 
 const styles = StyleSheet.create({
   registerContainer: {
+    paddingTop: 80,
     width: width * 0.9,
-    height: height * 0.78,
+    height: height * 0.5,
     backgroundColor: "#F4F5F7",
     borderRadius: 4,
     shadowColor: argonTheme.COLORS.BLACK,

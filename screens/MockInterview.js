@@ -34,8 +34,7 @@ class MockInterview extends React.Component {
         regarding your past group or academic experiences. Before answering the questions you would
         be given time to think up an answer and when that time is up you will present your answer through an audio 
         recording that would begin recording at your time.</Text>
-        {/* <Text style={{fontSize:16}}>1. Tell me about a time you were in a ... </Text> */}
-        <Text>{this.state.test}</Text>
+        
         <Text
             h5
             style={{ marginBottom: theme.SIZES.BASE / 2 }}
@@ -43,7 +42,7 @@ class MockInterview extends React.Component {
           >
             1. Tell me about a time that you were in ...
           </Text>
-        <Button onPress={this.onHandleChangeTest}>Record</Button>
+        <Button style={{marginBottom: 20}} onPress={this.onHandleChangeTest}>Record</Button>
         <Text
             h5
             style={{ marginBottom: theme.SIZES.BASE / 2 }}
@@ -51,7 +50,7 @@ class MockInterview extends React.Component {
           >
             2. What is your reason for ...
           </Text>
-          <Button onPress={this.onHandleChangeTest}>Record</Button>
+          <Button style={{marginBottom: 20}} onPress={this.onHandleChangeTest}>Record</Button>
           <Text
             h5
             style={{ marginBottom: theme.SIZES.BASE / 2 }}
@@ -59,7 +58,7 @@ class MockInterview extends React.Component {
           >
             3. What his best ....
           </Text>
-          <Button onPress={this.onHandleChangeTest}>Record</Button>
+          <Button style={{marginBottom: 20}} onPress={this.onHandleChangeTest}>Record</Button>
           <Text
             h5
             style={{ marginBottom: theme.SIZES.BASE / 2 }}
@@ -67,7 +66,7 @@ class MockInterview extends React.Component {
           >
             4. Do you have any previous experience ...
           </Text>
-          <Button onPress={this.onHandleChangeTest}>Record</Button>
+          <Button style={{marginBottom: 20}} onPress={this.onHandleChangeTest}>Record</Button>
           <Text
             h5
             style={{ marginBottom: theme.SIZES.BASE / 2 }}
@@ -75,7 +74,7 @@ class MockInterview extends React.Component {
           >
             5. When you took this class ....
           </Text>
-          <Button onPress={this.onHandleChangeTest}>Record</Button>
+          <Button style={{marginBottom: 20}} onPress={this.onHandleChangeTest}>Record</Button>
           <Text
             h5
             style={{ marginBottom: theme.SIZES.BASE / 2 }}

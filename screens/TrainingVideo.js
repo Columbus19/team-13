@@ -1,5 +1,5 @@
 import React, { setGlobal, useGlobal  } from "reactn";
-import { StyleSheet, Dimensions, WebView} from "react-native";
+import { StyleSheet, Dimensions, WebView, Image} from "react-native";
 // Galio components
 import { Block, Button, Text, theme } from "galio-framework";
 // Argon themed components
@@ -14,13 +14,20 @@ class TrainingVideo extends React.Component {
       const { navigation } = this.props;
       return(
         <Block>
+<Image source={{uri: 'https://facebook.github.io/react/logo-og.png'}}
+       style={{width: width, height: 400, marginBottom: 30}} />
+       <Block flex center>
+
+       
           <Button
             style={styles.button}
-            color={argonTheme.COLORS.PRIMARY}
+            color="primary"
             onPress={() => navigation.navigate("TrainingVideo")}
             textStyle={styles.buttonText}
           >
+            Go to assessment
           </Button>
+        </Block>
         </Block>
       );
     }
@@ -32,7 +39,7 @@ class TrainingVideo extends React.Component {
       position: 'relative'
     },
     buttonText: {
-      color: argonTheme.COLORS.BLACK,
+      color: argonTheme.COLORS.WHITE,
       fontWeight: "bold",
       fontSize: 16
     },
