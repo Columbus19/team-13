@@ -102,12 +102,6 @@ class Assessment extends React.Component {
                       () => this.onHandleChangeCheckbox(4)
                     }
         />
-         
-
-        {/* {this.ButtonOptions("Option 1",this.state.Option1)}
-        {this.ButtonOptions("Option 2","Option2")}
-        {this.ButtonOptions("Option 3","Option3")}
-        {this.ButtonOptions("Option 4","Option4")} */}
 
         <Block center style={{paddingBottom: 30, paddingTop: 50}}>
             <Button color="success" 

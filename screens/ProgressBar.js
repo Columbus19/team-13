@@ -64,10 +64,10 @@ class ProgressBar extends React.Component {
   renderButtons = () => {
     return (
       <Block flex>
-        <Text bold size={16} style={styles.title}>
+        <Text h1 bold size={30} style={styles.title}>
           Progress
         </Text>
-        <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
+        <Block style={{ paddingHorizontal: theme.SIZES.BASE, marginTop: 100 }}>
           {this.renderStageButton("Application", this.progressEnums.application)}
           {this.renderLineButton()}
           {this.renderStageButton("Training", this.progressEnums.training)}

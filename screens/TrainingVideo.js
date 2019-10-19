@@ -14,7 +14,7 @@ class TrainingVideo extends React.Component {
       const { navigation } = this.props;
       return(
         <Block>
-<Image source={{uri: 'https://facebook.github.io/react/logo-og.png'}}
+<Image source={{uri: 'https://cdn.vox-cdn.com/thumbor/HIluJzxPz3qH66lFxxHKVl10UzQ=/0x0:2040x1360/1200x800/filters:focal(857x517:1183x843)/cdn.vox-cdn.com/uploads/chorus_image/image/60211577/acastro_180403_1777_youtube_0001.0.jpg'}}
        style={{width: width, height: 400, marginBottom: 30}} />
        <Block flex center>    
           <Button

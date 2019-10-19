@@ -603,7 +603,8 @@ class ResumePage extends React.Component {
       <ScrollView style={{padding: 20}}>
         <Text
             h1
-            style={{ marginBottom: theme.SIZES.BASE / 2 , textAlign:"center"}}
+            bold
+            style={{ marginBottom: theme.SIZES.BASE / 2 , textAlign:"center", size: 30}}
             color={argonTheme.COLORS.DEFAULT}>
         Application Details
         </Text>
@@ -972,7 +973,7 @@ class ResumePage extends React.Component {
         </Block>
 
         <Block center style={{paddingBottom: 30, paddingTop: 50}}>
-            <Button color="success" 
+            <Button color="primary" 
             style={{marginBottom: theme.SIZES.BASE, width: width - theme.SIZES.BASE * 2}}
             onPress={() => {this.onHandleSubmit()}}>
               Submit
