@@ -1,4 +1,4 @@
-import React from "react";
+import React, { setGlobal } from "reactn";
 import { ScrollView, StyleSheet, Dimensions, TextInput } from "react-native";
 // Galio components
 import { Block, Text, Button as GaButton, theme } from "galio-framework";
@@ -6,12 +6,14 @@ import { Block, Text, Button as GaButton, theme } from "galio-framework";
 import { argonTheme, tabs } from "../constants";
 import { Button, Select, Icon, Input, Header, Switch } from "../components";
 
+import ProgressEnums from "../enums/progressEnums";
 const { width } = Dimensions.get("screen");
+import {advanceToTraining} from '../states/UserState.js';
 
 class ResumePage extends React.Component {
 
   onHandleSubmit = () => {
-    global.userState.advanceToTraining();
+    advanceToTraining();
     const { navigation } = this.props;
     navigation.navigate("ProgressBar");
   }
@@ -939,15 +941,6 @@ class ResumePage extends React.Component {
               Submit
             </Button>
         </Block>
-
-        <Text
-          h5
-          style={{ marginBottom: theme.SIZES.BASE / 2, marginLeft: 15 }}
-          color={argonTheme.COLORS.DEFAULT}
-        >
-          {global.userState.stage}
-        </Text>
-
       </ScrollView>
     );
   }

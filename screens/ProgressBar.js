@@ -1,4 +1,4 @@
-import React from "react";
+import React, { setGlobal } from "reactn";
 import { ScrollView, StyleSheet, Dimensions, TouchableOpacity } from "react-native";
 // Galio components
 import { Block, Text, Button as GaButton, theme } from "galio-framework";
@@ -6,6 +6,7 @@ import { Block, Text, Button as GaButton, theme } from "galio-framework";
 import { argonTheme, tabs } from "../constants/";
 import { Button, Select, Icon, Input, Header, Switch } from "../components/";
 import  ProgressEnums from "../enums/progressEnums";
+import {getStage} from '../states/UserState.js';
 
 const { width } = Dimensions.get("screen");
 
@@ -19,7 +20,7 @@ class ProgressBar extends React.Component {
     var selectedButtonColor = "default";
     var unselectedButtonColor = "secondary";
 
-    const isSelected = global.userState.stage == pageToNav;
+    const isSelected = getStage() == pageToNav;
 
     if(isSelected){
       return(

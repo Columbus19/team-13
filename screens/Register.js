@@ -1,4 +1,4 @@
-import React from "react";
+import React, { setGlobal } from "reactn";
 import {
   StyleSheet,
   ImageBackground,
@@ -7,15 +7,17 @@ import {
   KeyboardAvoidingView
 } from "react-native";
 import { Block, Checkbox, Text, theme } from "galio-framework";
+import {advanceToApplication} from '../states/UserState.js';
 
 import { Button, Icon, Input } from "../components";
 import { Images, argonTheme } from "../constants";
+import  ProgressEnums from "../enums/progressEnums";
 
 const { width, height } = Dimensions.get("screen");
 
 class Register extends React.Component {
   onHandleLogin = () => {
-    global.userState.advanceToApplication();
+    advanceToApplication();
     const { navigation } = this.props;
     navigation.navigate("ProgressBar");
   }

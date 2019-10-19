@@ -1,20 +1,37 @@
 import ProgressEnums from '../enums/progressEnums';
 
-global.userState = {};
-global.userState.stage = null;
+global.stage = [''];
 
-global.userState.advanceToApplication = function() {
-    global.userState.stage = new ProgressEnums().application;
+advanceToApplication = function() {
+    global.stage[0] = new ProgressEnums().application;
 };
 
-global.userState.advanceToTraining = function() {
-    global.userState.stage = new ProgressEnums().training;
+advanceToTraining = function() {
+    global.stage[0] = new ProgressEnums().training;
 };
 
-global.userState.advanceToInterview = function() {
-    global.userState.stage = new ProgressEnums().interview;
+advanceToInterview = function() {
+    global.stage[0] = new ProgressEnums().interview;
 };
 
-global.userState.advanceToFinal = function() {
-    global.userState.stage = new ProgressEnums().final;
+advanceToFinal = function() {
+    global.stage[0] = new ProgressEnums().final;
 };
+
+advanceToFinal = function() {
+    global.stage[0] = new ProgressEnums().final;
+};
+
+getStage = function() {
+    return global.stage[0];
+}
+
+const exports = {
+    advanceToApplication,
+    advanceToTraining,
+    advanceToInterview,
+    advanceToFinal,
+    getStage
+}
+
+module.exports = exports;

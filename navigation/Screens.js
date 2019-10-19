@@ -1,4 +1,4 @@
-import React from "react";
+import React, { setGlobal } from "reactn";
 import { Easing, Animated } from "react-native";
 import {
   createStackNavigator,

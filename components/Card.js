@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { setGlobal } from "reactn";
 import { withNavigation } from 'react-navigation';
 import PropTypes from 'prop-types';
 import { StyleSheet, Dimensions, Image, TouchableWithoutFeedback } from 'react-native';
