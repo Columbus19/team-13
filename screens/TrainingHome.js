@@ -34,15 +34,15 @@ class TrainingHome extends React.Component {
   renderButtons = () => {
     const { navigation } = this.props;
     return (
-      <Block flex style={styles.group}>
+      <Block flex>
         <Text bold size={16} style={styles.title}>
           Training
         </Text>
         <Block flex>
-          <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
+          <Block style={{ padding: 20}}>
             <Button
               style={styles.button}
-              color="default"
+              color="primary"
               onPress={() => navigation.navigate("TrainingVideo")}
               textStyle={styles.buttonText}
               >
@@ -50,7 +50,7 @@ class TrainingHome extends React.Component {
             </Button>
             <Button
               style={styles.button}
-              color="default"
+              color="primary"
               onPress={() => navigation.navigate("TrainingVideo")}
               textStyle={styles.buttonText}
               >
@@ -58,14 +58,14 @@ class TrainingHome extends React.Component {
             </Button>
             <Button
               style={styles.button}
-              color="default"
+              color="primary"
               onPress={() => navigation.navigate("TrainingVideo")}
               textStyle={styles.buttonText}
               >
               Interviewing skills
             </Button>
             <Button
-              color="default"
+              color="success"
               onPress={() => this.onHandleGoToInterview()}
               textStyle={styles.buttonText}
               >
@@ -82,10 +82,10 @@ const styles = StyleSheet.create({
   button: {
     marginBottom: 20,
     position: 'relative',
-    height: height / 5
+    height: height / 8
   },
   buttonText: {
-    color: argonTheme.COLORS.BLACK,
+    color: argonTheme.COLORS.WHITE,
     fontWeight: "bold",
     fontSize: 16
   },

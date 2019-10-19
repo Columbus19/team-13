@@ -16,13 +16,11 @@ class TrainingVideo extends React.Component {
         <Block>
 <Image source={{uri: 'https://facebook.github.io/react/logo-og.png'}}
        style={{width: width, height: 400, marginBottom: 30}} />
-       <Block flex center>
-
-       
+       <Block flex center>    
           <Button
             style={styles.button}
             color="primary"
-            onPress={() => navigation.navigate("TrainingVideo")}
+            onPress={() => navigation.navigate("Assessment")}
             textStyle={styles.buttonText}
           >
             Go to assessment

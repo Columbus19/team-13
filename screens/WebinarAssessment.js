@@ -26,7 +26,7 @@ class Assessment extends React.Component {
     const {
       navigation
     } = this.props;
-    navigation.navigate("ProgressBar");
+    navigation.navigate("Training");
   }
 
 

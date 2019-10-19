@@ -348,7 +348,6 @@ const AppStack = createDrawerNavigator(
         )
       })
     }
-
   },
   Menu
 );
