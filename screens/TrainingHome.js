@@ -38,7 +38,7 @@ class TrainingHome extends React.Component {
               onPress={() => navigation.navigate("TrainingVideo")}
               textStyle={styles.buttonText}
               >
-              About INROADS
+              About INROADS >
             </Button>
             <Button
               style={styles.button}
@@ -46,7 +46,7 @@ class TrainingHome extends React.Component {
               onPress={() => navigation.navigate("TrainingVideo")}
               textStyle={styles.buttonText}
               >
-              Preparing for an internship
+              Preparing for an internship >
             </Button>
             <Button
               style={styles.button}
@@ -54,7 +54,7 @@ class TrainingHome extends React.Component {
               onPress={() => navigation.navigate("TrainingVideo")}
               textStyle={styles.buttonText}
               >
-              Interviewing skills
+              Interviewing skills >
             </Button>
           </Block>
         </Block>
@@ -72,12 +72,13 @@ const styles = StyleSheet.create({
   buttonText: {
     color: argonTheme.COLORS.BLACK,
     fontWeight: "bold",
-    fontSize: 16
+    fontSize: 20
   },
   title: {
     paddingBottom: theme.SIZES.BASE,
     paddingHorizontal: theme.SIZES.BASE * 2,
     marginTop: 22,
+    fontSize: 24,
     color: argonTheme.COLORS.HEADER
   },
   group: {

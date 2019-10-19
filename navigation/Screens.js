@@ -183,7 +183,8 @@ const ResumePageStack = createStackNavigator({
   Articles: {
     screen: ResumePage,
     navigationOptions: ({ navigation }) => ({
-      header: <Header title="Application" navigation={navigation} />
+      // header: <Header title="Application"  navigation={navigation} />
+      headerTransparent: true
     })
   }
 },{
